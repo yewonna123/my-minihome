@@ -1,0 +1,250 @@
+/*
+ * Device layout supplement — 2026-11-18
+ * No replacement diary, no duplicate tabs, no duplicate close control.
+ * On PCs, the EXISTING diary/open state/MP3/earphones stay mounted.
+ */
+
+/* Desktop narrow window: redraw ONLY the backing/paper using the individual
+   exported transparent assets; reposition existing real controls and decorations.
+   Unlike a static screenshot these elements remain interactive. */
+/* Compact desktop: ONE existing diary; the original CLOSED cover is the anchor.
+ * Original cover dimensions: 708x972, pink body starts 58px from the left.
+ * New compact back: 669x948, pink body ALSO begins 58px from the left.
+ * Both use the very same 0.79 drawing scale and 767x1086 coordinate stage.
+ * Only backing/paper/index art is replaced; never a full design screenshot. */
+@media (max-width:767px) {
+  body:not(.r-phone) {
+    background-color:#68483a ;
+    background-image:radial-gradient(circle,rgba(255,235,220,.17) .7px,transparent .9px) ;
+    background-size:17px 17px ;
+  }
+  body:not(.r-phone) > .wrapper {
+    position:absolute ;
+    left:50% ;top:50% ;
+    width:767px ;height:1086px ;
+    margin:0 ;padding:0 ;
+    transform:translate(-50%,-50%) scale(var(--r-compact-scale,1)) ;
+    transform-origin:center center ;
+    background:transparent ;overflow:visible ;
+  }
+  /* Original cover top-left in the 767 stage: (104,159).
+     New rear art is visually aligned to the cover's pink outer edge. */
+  body:not(.r-phone) > .wrapper::before {
+    content:'' ;position:absolute ;
+    left:104px ;top:159px ;
+    width:528.51px ;height:748.92px ;
+    right:auto ;bottom:auto ;
+    background:transparent url('responsive-assets/compact-back-aligned.png') left top/100% 100% no-repeat ;
+    border:0 ;border-radius:0 ;box-shadow:none ;
+    z-index:0 ;pointer-events:none ;
+  }
+  /* Reuse the existing clip decoration as an independent element. */
+  body:not(.r-phone) > .wrapper::after {
+    left:537px ;top:182px ;
+    width:40px ;height:62px ;
+    right:auto ;bottom:auto ;
+    background-size:contain ;
+    z-index:40 ;pointer-events:none ;
+  }
+  body:not(.r-phone) > .wrapper > .main {
+    position:absolute ;
+    left:104px ;top:159px ;
+    width:529px ;height:750px ;
+    min-height:0 ;
+    background:none ;border:0 ;border-radius:0 ;box-shadow:none ;
+    padding:0 ;margin:0 ;overflow:visible ;
+    z-index:4 ;
+  }
+  body:not(.r-phone) .wrapper > .main::before {display:none ;}
+  /* New individual page export, with four rings built into the art. */
+  body:not(.r-phone) .wrapper > .main::after {
+    content:'' ;display:block ;
+    position:absolute ;left:52px ;top:52px ;
+    width:419.2px ;height:644.8px ;
+    background:transparent url('responsive-assets/compact-page-aligned.png') left top/100% 100% no-repeat ;
+    border:0 ;border-radius:0 ;box-shadow:none ;
+    z-index:4 ;pointer-events:none ;
+  }
+  body:not(.r-phone) .wrapper > .main > .sidebar {display:none ;}
+  body:not(.r-phone) .wrapper > .main > .content {
+    position:absolute ;
+    left:95px ;top:96px ;
+    width:367px ;height:576px ;
+    padding:10px 15px 20px 0 ;
+    margin:0 ;box-sizing:border-box ;
+    overflow-x:hidden ;overflow-y:auto ;
+    background:none ;border:0 ;border-radius:0 ;box-shadow:none ;
+    transform:none ;z-index:5 ;
+  }
+  body:not(.r-phone) .wrapper > .main > .top {
+    position:absolute ;
+    left:254px ;top:12px ;
+    width:160px ;height:45px ;
+    background:transparent url('figma-assets/메모장(미니홈피 타이틀).png') left top/160px 45px no-repeat ;
+    border:0 ;box-shadow:none ;z-index:2 ;
+  }
+  body:not(.r-phone) .wrapper > .main > .top h1 {font-size:9px ;line-height:12px ;padding:4px 7px 0 ;margin:0 ;}
+  body:not(.r-phone) .wrapper > .main > .top p,
+  body:not(.r-phone) .wrapper > .main > .top .small {font-size:5.5px ;line-height:8px ;padding:0 7px ;margin:0 ;}
+  body:not(.r-phone) .wrapper > .figma-visitor-counter {
+    position:absolute ;left:181px ;top:158px ;
+    width:140px ;height:69px ;
+    background-size:contain ;z-index:3 ;
+  }
+  body:not(.r-phone) .wrapper > .figma-visitor-counter .counter-labels {top:45px ;font-size:8px ;line-height:10px ;}
+  body:not(.r-phone) .wrapper > .figma-visitor-counter .counter-labels span {font-size:8px ;}
+  body:not(.r-phone) .wrapper > .diary-keyring {
+    position:absolute ;left:-8px ;top:222px ;
+    width:146px ;height:281px ;
+    background-size:contain ;z-index:6 ;
+  }
+  /* Existing seven index BUTTONS and click handlers; only skins change. */
+  body:not(.r-phone) .wrapper > .main > .menu {
+    position:absolute ;left:422px ;top:90px ;
+    width:117px ;height:390px ;display:block ;
+    overflow:visible ;z-index:2 ;
+  }
+  body:not(.r-phone) .wrapper > .main > .menu button,
+  body:not(.r-phone) .wrapper > .main > .menu button:hover,
+  body:not(.r-phone) .wrapper > .main > .menu button:focus-visible {
+    position:absolute ;left:0 ;width:116.92px ;
+    height:48.19px ;min-height:48.19px ;
+    padding:0 14px 0 24px ;margin:0 ;
+    background:transparent url('responsive-assets/compact-index-off.png') left top/100% 100% no-repeat ;
+    border:0 ;border-radius:0 ;box-shadow:none ;
+    transform:none ;white-space:nowrap ;
+    font-size:8px ;line-height:48px ;text-align:right ;
+    color:#fff5fa ;z-index:1 ;
+  }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(1){top:0 }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(2){top:48.19px }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(3){top:96.38px }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(4){top:144.57px }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(5){top:192.76px }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(6){top:240.95px }
+  body:not(.r-phone) .wrapper > .main > .menu button:nth-child(7){top:289.14px }
+  body:not(.r-phone) .wrapper > .main > .menu button.active,
+  body:not(.r-phone) .wrapper > .main > .menu button.active:hover,
+  body:not(.r-phone) .wrapper > .main > .menu button.active:focus-visible {
+    left:49.77px ;width:67.15px ;padding:0 14px 0 4px ;
+    background:transparent url('responsive-assets/compact-index-on.png') left top/100% 100% no-repeat ;
+    color:#73525f ;z-index:2 ;
+  }
+  /* Single existing close control; the 129x102 skin is a separate transparent asset. */
+  body:not(.r-phone) .wrapper > .diary-close-btn,
+  body:not(.r-phone) .wrapper > .diary-close-btn:hover,
+  body:not(.r-phone) .wrapper > .diary-close-btn:focus-visible {
+    position:absolute ;
+    left:610px ;top:490px ;
+    right:auto ;bottom:auto ;
+    width:156.42px ;height:80.58px ;
+    padding:0 ;margin:0 ;
+    background:transparent url('figma-assets/다이어리 열린 상태일떄 잠금장치.png') center/contain no-repeat ;
+    border:0 ;box-shadow:none ;
+    transform:none ;color:transparent ;z-index:1 ;
+  }
+  /* Do NOT change the existing cover layout or cover artwork.
+     Keep the last patch's existing cover size and strap positions. */
+  body:not(.r-phone) .diary-cover-book {
+    left:calc(50% - 354px * var(--r-closed-scale,.79)) ;
+    top:calc(50% - 486px * var(--r-closed-scale,.79)) ;
+    width:708px ;height:972px ;
+    transform:scale(var(--r-closed-scale,.79)) ;
+    transform-origin:top left ;
+  }
+  body:not(.r-phone) .diary-cover-leaf {
+    inset:0 ;width:708px ;height:972px ;
+    background:none ;
+  }
+  body:not(.r-phone) .diary-cover-book .diary-cover-strap {
+    left:466px ;top:413px ;width:243px ;height:124px ;
+    background:url('figma-assets/다이어리 잠금장치 닫혔을때.png') center/contain no-repeat ;
+  }
+  body:not(.r-phone) .diary-cover-screen.is-opening .diary-cover-book .diary-cover-strap {
+    left:670.2px ;background-image:url('figma-assets/다이어리 잠금장치 열릴때.png') ;
+  }
+  body:not(.r-phone) .diary-cover-book > .diary-keyring {
+    left:-142px ;top:80px ;
+    width:185px ;height:356px ;
+    background-size:contain ;
+  }
+  /* Reuse the actual collapsed player & separate moving earphone pieces. */
+  body:not(.r-phone) > .bgm-panel.is-collapsed {
+    position:fixed ;
+    right:calc(19px * var(--r-compact-scale,1)) ;
+    top:calc(28px * var(--r-compact-scale,1)) ;
+    left:auto ;bottom:auto ;
+    zoom:var(--r-compact-mp3-zoom,.78) ;
+  }
+}
+
+/* Phone detection is performed separately in JS; a narrow PC never receives it. */
+body.r-phone{background:#68483a ;background-image:radial-gradient(circle,rgba(255,232,220,.19) .7px,transparent .9px) ;background-size:12px 12px ;overflow:hidden ;min-width:0 ;}
+body.r-phone > .wrapper{visibility:hidden;pointer-events:none;}
+body.r-phone .diary-cover-screen{background-color:#68483a ;}
+body.r-phone .diary-cover-book{
+  left:calc(50% - 354px * var(--r-phone-cover-scale,.48)) ;
+  top:calc(50% - 486px * var(--r-phone-cover-scale,.48) + 15px) ;
+  transform:scale(var(--r-phone-cover-scale,.48)) ;
+  transform-origin:top left ;
+}
+body.r-phone > .bgm-panel.is-collapsed{top:10px ;right:8px ;left:auto ;bottom:auto ;zoom:.52 ;}
+body.r-phone.r-phone-open > .bgm-panel,body.r-phone.r-phone-open > .mp3-earphones{visibility:hidden ;pointer-events:none ;}
+body.r-phone.r-phone-bgm > .bgm-panel:not(.is-collapsed){
+  visibility:visible ;pointer-events:auto ;position:fixed ;
+  z-index:23001 ;top:50% ;left:50% ;right:auto ;bottom:auto ;
+  zoom:1 ;transform:translate(-50%,-50%) ;
+  width:256px ;min-width:256px ;height:min(490px,calc(100dvh - 65px)) ;
+  max-height:calc(100dvh - 65px) ;
+}
+body.r-phone.r-phone-bgm > .mp3-earphones{visibility:hidden ;pointer-events:none ;}
+body.r-phone.r-phone-bgm > .bgm-panel [data-fold]{display:none;}
+
+/* Mobile-only inside pages: decor is deliberately provisional pending sticker art. */
+#r-phone-app{display:none;position:fixed;inset:0;z-index:16000;background:#fdebf4;color:#59474e;font-family:'Gowun Dodum',sans-serif;overflow:hidden;}
+body.r-phone.r-phone-open #r-phone-app{display:flex;flex-direction:column;}
+#r-phone-app *{box-sizing:border-box;}
+#r-phone-app [hidden]{display:none;}
+#r-phone-app button{font-family:inherit;touch-action:manipulation;cursor:pointer;}
+.r-phone-top{flex:none;position:relative;min-height:92px;background:#edb2cd;padding:19px 18px 12px;}
+.r-phone-top::after{content:'';position:absolute;bottom:-9px;left:0;right:0;height:9px;background:#8b7072;}
+.r-phone-counter{position:absolute;left:15px;top:7px;background:#fff0cc;color:#866f74;padding:3px 12px;border-radius:15px;font-size:9px;transform:rotate(-5deg);}
+.r-phone-memo{margin-left:4px;max-width:245px;background:#b9e6ee;padding:15px 12px 8px;font-size:12px;line-height:1.4;}
+.r-phone-memo small{display:block;font-size:9px;}
+.r-phone-bgm-toggle{position:absolute;right:14px;top:18px;border:0;border-radius:50%;background:#f3a5c9;color:#573e50;width:51px;height:51px;font-size:14px;}
+.r-phone-scroll{min-height:0;flex:1;overflow:auto;overscroll-behavior:contain;padding:30px 18px 75px;}
+.r-phone-profile{margin-bottom:25px;}
+.r-phone-profile-inner{display:grid;grid-template-columns:37% minmax(0,1fr);gap:14px;}
+.r-phone-photo{aspect-ratio:1/1;position:relative;border:1px solid #e6a3c6;border-radius:4px;background:#fff8fb;}
+.r-phone-photo::before{content:'';position:absolute;left:34%;top:-10px;width:33px;height:22px;background:#efaccd;transform:rotate(28deg);}
+.r-phone-profile-info{font-size:14px;line-height:1.6;overflow-wrap:anywhere;}
+.r-phone-profile-info p{margin:10px 0 2px;}
+.r-phone-profile-info a{color:inherit;text-decoration:none;}
+.r-phone-profile-more{border:1px solid #efadc9;border-radius:6px;background:#fff7fb;color:#513d43;font-size:12px;padding:5px 10px;}
+.r-phone-profile-expanded{background:#fff6fa;border:1px solid #eac0d7;padding:12px 14px;margin-top:14px;font-size:12px;line-height:1.6;}
+.r-phone-contents{padding:0 6px;}
+#r-phone-app #content{display:block;position:static;width:100%;max-width:none;height:auto;min-height:0;overflow:visible;transform:none;margin:0;padding:0;border:0;box-shadow:none;background:none;}
+#r-phone-app #content img{max-width:100%;height:auto;}
+#r-phone-app #content .portfolio-grid,#r-phone-app #content .home-work-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+#r-phone-app #content .project-card,#r-phone-app #content .home-work-card{width:100%;}
+#r-phone-app #content .page-title{font-size:18px;margin:0 0 16px;}
+.r-phone-nav{flex:none;position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:63px;background:#876b6c;padding-bottom:env(safe-area-inset-bottom,0px);}
+.r-phone-nav button{background:transparent;border:0;color:#fff4fa;font-size:24px;display:grid;place-content:center;gap:1px;}
+.r-phone-nav button[aria-current="page"]{color:#f5b4d4;}
+.r-phone-nav button small{font-size:9px;}
+.r-phone-more-menu{position:absolute;right:5px;bottom:72px;background:#fff7fb;border:1px solid #e9abc9;box-shadow:0 4px 15px #68483a55;border-radius:9px;padding:9px;display:flex;flex-direction:column;gap:6px;}
+.r-phone-more-menu button{padding:8px 14px;color:#604b51;text-align:left;background:#fff;border:1px solid #edd2df;border-radius:5px;}
+#r-phone-bgm-dim{display:none;position:fixed;inset:0;z-index:23000;background:#34262fc9;backdrop-filter:blur(5px);}
+body.r-phone.r-phone-bgm #r-phone-bgm-dim{display:block;}
+#r-phone-bgm-dim button{position:absolute;right:calc(50% - 143px);top:max(10px,calc(50% - 263px));border:2px solid #fff;width:37px;height:37px;border-radius:50%;background:#eec4da;color:#60394c;font-size:26px;}
+
+/* Paperclip must be a real wrapper child: wrapper::after could be occluded by the paper stacking context. */
+.compact-diary-paperclip { display:none; }
+@media (max-width:767px) {
+  body:not(.r-phone) > .wrapper::after { display:none; }
+  body:not(.r-phone) > .wrapper > .compact-diary-paperclip {
+    display:block; position:absolute; left:537px; top:182px;
+    width:40px; height:62px; object-fit:contain;
+    z-index:50; pointer-events:none;
+  }
+}
