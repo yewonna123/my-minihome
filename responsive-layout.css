@@ -188,11 +188,12 @@ body.r-phone .diary-cover-book{
   transform:scale(var(--r-phone-cover-scale,.48)) !important;
   transform-origin:top left !important;
 }
-body.r-phone:not(.r-phone-open) > .mp3-earphones{visibility:visible;z-index:10000;}\nbody.r-phone > .bgm-panel.is-collapsed{top:10px !important;right:8px !important;left:auto !important;bottom:auto !important;zoom:.52 !important;}
+body.r-phone:not(.r-phone-open) > .mp3-earphones{visibility:visible;z-index:10000;}
+body.r-phone > .bgm-panel.is-collapsed{top:10px !important;right:8px !important;left:auto !important;bottom:auto !important;zoom:.52 !important;}
 body.r-phone.r-phone-open:not(.r-phone-bgm) > .bgm-panel,body.r-phone.r-phone-open:not(.r-phone-bgm) > .mp3-earphones{visibility:hidden;pointer-events:none;}
 body.r-phone.r-phone-bgm > .bgm-panel:not(.is-collapsed){
   visibility:visible !important;pointer-events:auto !important;position:fixed !important;
-  z-index:23001 !important;top:50% !important;left:50% !important;right:auto !important;bottom:auto !important;
+  z-index:23003 !important;top:50% !important;left:50% !important;right:auto !important;bottom:auto !important;
   zoom:1 !important;transform:translate(-50%,-50%) !important;
   width:256px !important;min-width:256px !important;height:min(490px,calc(100dvh - 65px)) !important;
   max-height:calc(100dvh - 65px) !important;
@@ -240,7 +241,7 @@ body.r-phone.r-phone-bgm #r-phone-bgm-dim{display:block;}
 
 /* Mobile diary controls and original asset decorations. */
 body.r-phone .r-phone-top{padding-right:90px}
-body.r-phone .r-phone-close{position:absolute;right:12px;bottom:9px;z-index:3;background:#fff3f9;border:1px solid #b9819c;border-radius:9px;color:#714b62;padding:7px 11px;font-size:12px}
+body.r-phone .r-phone-close{position:absolute;left:12px;right:auto;top:12px;bottom:auto;z-index:3;background:#fff3f9;border:1px solid #b9819c;border-radius:9px;color:#714b62;padding:7px 11px;font-size:12px}
 body.r-phone .r-phone-journal-link{display:block;width:100%;margin:20px 0 8px;padding:13px;border:1px solid #dca8bd;border-radius:8px;background:#fff6fa;color:#694e5b;text-align:left}
 body.r-phone #r-phone-app .r-phone-home-after[hidden]{display:none}
 body.r-phone.r-phone-bgm .mp3-earphones .part[data-mode="open"]{pointer-events:auto}
@@ -252,3 +253,8 @@ body.r-phone.r-phone-bgm .mp3-earphones .part[data-mode="open"]{pointer-events:a
    z-index:99999!important;
  }
 }
+
+/* Keep the earphone artwork behind the MP3 player, but above the dim backdrop. */
+body.r-phone.r-phone-bgm > .bgm-panel:not(.is-collapsed){z-index:23003 !important}
+body.r-phone.r-phone-bgm > .mp3-earphones{z-index:23002}
+body.r-phone .r-phone-top .r-phone-close{left:12px;right:auto;top:12px;bottom:auto}
