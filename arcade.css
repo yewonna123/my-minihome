@@ -50,3 +50,15 @@
 .asmr-stage{position:relative}.asmr-three{width:100%;height:420px;overflow:hidden;border-radius:14px;background:#f8eef1}
 .asmr-three canvas{display:block;width:100%;height:100%}.asmr-room-back{margin:8px 0}
 @media(max-width:520px){.asmr-three{height:300px}.asmr-room-grid button{padding:16px 6px}}
+
+/* ASMR touch controls: only on phone-sized touch devices. */
+.asmr-mobile-dpad{display:none}
+@media (max-width:767px) and (pointer:coarse){
+ .asmr-mobile-dpad{display:grid;grid-template-columns:repeat(3,52px);grid-template-rows:repeat(2,48px);justify-content:center;gap:5px;margin:12px auto 4px;touch-action:none;user-select:none;-webkit-user-select:none}
+ .asmr-mobile-dpad button{appearance:none;display:grid;place-items:center;border:1px solid #b9a3b1;border-radius:12px;background:#f6e6ee;color:#805c74;font:20px/1 sans-serif;touch-action:none;-webkit-tap-highlight-color:transparent;cursor:pointer}
+ .asmr-mobile-dpad button:active,.asmr-mobile-dpad button.is-pressed{background:#e9bfd3}
+ .asmr-mobile-dpad button:nth-child(1){grid-column:2;grid-row:1}
+ .asmr-mobile-dpad button:nth-child(2){grid-column:1;grid-row:2}
+ .asmr-mobile-dpad button:nth-child(3){grid-column:2;grid-row:2}
+ .asmr-mobile-dpad button:nth-child(4){grid-column:3;grid-row:2}
+}

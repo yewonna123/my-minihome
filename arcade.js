@@ -46,7 +46,7 @@
               <button data-asmr-room="4">◉ <b>05 · 오도독 스위치</b><small>오독 · 또독</small></button>
             </div>
           </div>
-          <div class="asmr-stage" data-asmr-stage hidden><button class="arcade-button asmr-room-back" data-asmr-room-back>← 다른 방</button><div class="asmr-three" data-asmr-three></div><p class="arcade-hint">WASD / 방향키 이동 · 밟으면 1회 · 발을 떼고 다시 밟으면 재생</p></div>
+          <div class="asmr-stage" data-asmr-stage hidden><button class="arcade-button asmr-room-back" data-asmr-room-back>← 다른 방</button><div class="asmr-three" data-asmr-three></div><div class="asmr-mobile-dpad" data-asmr-dpad aria-label="ASMR 이동 방향키"><button type="button" data-asmr-direction="arrowup" aria-label="위로 이동">▲</button><button type="button" data-asmr-direction="arrowleft" aria-label="왼쪽으로 이동">◀</button><button type="button" data-asmr-direction="arrowdown" aria-label="아래로 이동">▼</button><button type="button" data-asmr-direction="arrowright" aria-label="오른쪽으로 이동">▶</button></div><p class="arcade-hint">WASD / 방향키 이동 · 밟으면 1회 · 발을 떼고 다시 밟으면 재생</p></div>
         </div>
       </div>
     </section>`;

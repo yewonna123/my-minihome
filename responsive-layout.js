@@ -34,7 +34,7 @@
   app.id='r-phone-app';
   app.setAttribute('aria-label','모바일 미니홈피');
   app.innerHTML = `
-    <header class="r-phone-top">
+    <header class="r-phone-top"><button type="button" class="r-phone-close" aria-label="다이어리 닫기">✕ 닫기</button>
       <div class="r-phone-counter">TODAY 123&nbsp;&nbsp; TOTAL 12345</div>
       <div class="r-phone-memo">MY MINIHOME ♡<small>나의 작은 공간에 오신 것을 환영합니다.</small></div>
       <button class="r-phone-bgm-toggle" type="button" aria-label="BGM 플레이어 열기">bgm</button>
@@ -54,21 +54,15 @@
           <button type="button" data-r-page="profile">상세 프로필 보기 ♡</button>
         </div>
       </section>
-      <div class="r-phone-contents"></div>
+      <div class="r-phone-contents"></div><div class="r-phone-home-after"></div>
     </div>
     <nav class="r-phone-nav" aria-label="모바일 페이지 메뉴">
-      <button type="button" data-r-page="home" aria-label="홈"><span>⌂</span><small>홈</small></button>
+      <button type="button" data-r-page="home" aria-label="더보기"><span>⌂</span><small>더보기</small></button>
       <button type="button" data-r-page="portfolio" aria-label="포트폴리오"><span>★</span><small>작업</small></button>
       <button type="button" data-r-page="room" aria-label="미니룸"><span>▣</span><small>미니룸</small></button>
       <button type="button" data-r-page="game" aria-label="미니게임"><span>♧</span><small>게임</small></button>
-      <button type="button" class="r-phone-more" aria-label="더보기"><span>✦</span><small>더보기</small></button>
+      <button type="button" data-r-page="guestbook" aria-label="방명록"><span>✉</span><small>방명록</small></button>
     </nav>
-    <div class="r-phone-more-menu" hidden>
-      <button type="button" data-r-page="diary">✎ BEHIND</button>
-      <button type="button" data-r-page="guestbook">✉ GUESTBOOK</button>
-      <button type="button" data-r-page="profile">♡ PROFILE</button>
-      <button type="button" class="r-phone-more-dismiss">닫기</button>
-    </div>
   `;
   document.body.appendChild(app);
   const bgmDim = document.createElement('div');
@@ -76,11 +70,14 @@
   bgmDim.innerHTML='<button type="button" aria-label="MP3 팝업 닫기">×</button>';
   document.body.appendChild(bgmDim);
   app.querySelector('.r-phone-contents').appendChild(content);
+  const homeAfter=app.querySelector('.r-phone-home-after');
+  homeAfter.innerHTML='<button type="button" class="r-phone-journal-link" data-r-page="behind">✎ 비하인드 · 다이어리 / 제작 일지</button>';
   const phoneProfile = app.querySelector('.r-phone-profile');
   const currentPage = () => new URLSearchParams(location.hash.slice(1)).get('page') || 'home';
   const updateRoute=()=>{
     const route=currentPage();
-    phoneProfile.hidden = route !== 'home';
+    phoneProfile.hidden = route !== 'home' && route !== 'profile';
+    homeAfter.hidden = route !== 'home' && route !== 'profile';
     app.querySelectorAll('[data-r-page]').forEach(b=>b.setAttribute('aria-current',b.dataset.rPage===route?'page':'false'));
   };
   updateRoute();
@@ -89,6 +86,11 @@
   });
 
   const bgm=document.querySelector('.bgm-panel');
+  const diaryClose=document.querySelector('.wrapper > .diary-close-btn');
+  app.querySelector('.r-phone-close').addEventListener('click',()=>{
+    closeBgm();
+    if(diaryClose) diaryClose.click();
+  });
   const syncOpen=()=>{
     const opened=cover.classList.contains('is-open');
     document.body.classList.toggle('r-phone-open',opened);
@@ -119,14 +121,11 @@
       btn.textContent=extra.hidden?'프로필 펼치기':'프로필 접기';
       btn.setAttribute('aria-expanded',String(!extra.hidden));return;
     }
-    if (btn.classList.contains('r-phone-more')){
-      const menu=app.querySelector('.r-phone-more-menu');menu.hidden=!menu.hidden;return;
-    }
-    if (btn.classList.contains('r-phone-more-dismiss')){app.querySelector('.r-phone-more-menu').hidden=true;return;}
     if (btn.dataset.rPage){
-      app.querySelector('.r-phone-more-menu').hidden=true;
-      if (typeof window.goMinihome==='function') window.goMinihome(btn.dataset.rPage);
-      else location.hash='page='+btn.dataset.rPage;
+
+      const route=btn.dataset.rPage==='profile'?'home':btn.dataset.rPage==='diary'?'behind':btn.dataset.rPage;
+      if (typeof window.goMinihome==='function') window.goMinihome(route);
+      else location.hash='page='+route;
       updateRoute();
     }
   });

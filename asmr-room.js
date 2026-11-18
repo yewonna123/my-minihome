@@ -138,13 +138,35 @@ window.createMiniAsmrRoom = function(root, view) {
     }raf=requestAnimationFrame(frame);
   }
   function start(){active=true;room=-1;select.hidden=false;stage.hidden=true;status.textContent='방을 선택해 주세요 ♡'}
-  function backRoom(){room=-1;cleanScene();stage.hidden=true;select.hidden=false;status.textContent='방을 선택해 주세요 ♡';keys.clear()}
-  function stop(){active=false;room=-1;keys.clear();cleanScene()}
+  function backRoom(){resetTouch();room=-1;cleanScene();stage.hidden=true;select.hidden=false;status.textContent='방을 선택해 주세요 ♡';keys.clear()}
+  function stop(){resetTouch();active=false;room=-1;keys.clear();cleanScene()}
   function down(e){if(!active||room<0||e.altKey||e.ctrlKey||e.metaKey)return;const k=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(k)){e.preventDefault();keys.add(k)}else if(k==='escape'){e.preventDefault();backRoom()}}
   function up(e){keys.delete(e.key.toLowerCase())}
+  const touchButtons=[...view.querySelectorAll('[data-asmr-direction]')];
+  const touchCleanup=[];
+  touchButtons.forEach(button=>{
+    const key=button.dataset.asmrDirection;
+    const pointers=new Set();
+    const release=()=>{pointers.clear();keys.delete(key);button.classList.remove('is-pressed')};
+    const onDown=e=>{
+      if(!active||room<0)return;
+      e.preventDefault();
+      pointers.add(e.pointerId);
+      button.setPointerCapture?.(e.pointerId);
+      keys.add(key);
+      button.classList.add('is-pressed');
+    };
+    const onUp=e=>{pointers.delete(e.pointerId);if(!pointers.size){keys.delete(key);button.classList.remove('is-pressed')}};
+    button.addEventListener('pointerdown',onDown);
+    button.addEventListener('pointerup',onUp);
+    button.addEventListener('pointercancel',onUp);
+    button.addEventListener('lostpointercapture',onUp);
+    touchCleanup.push(()=>{release();button.removeEventListener('pointerdown',onDown);button.removeEventListener('pointerup',onUp);button.removeEventListener('pointercancel',onUp);button.removeEventListener('lostpointercapture',onUp)});
+  });
+  const resetTouch=()=>touchButtons.forEach(button=>{keys.delete(button.dataset.asmrDirection);button.classList.remove('is-pressed')});
   const blur=()=>keys.clear();const mute=()=>{muted=!muted;muteBtn.textContent=muted?'🔇 소리 꺼짐':'🔊 소리 켜짐'};
   const buttons=[...view.querySelectorAll('[data-asmr-room]')];buttons.forEach(b=>b.addEventListener('click',()=>enter(Number(b.dataset.asmrRoom))));
   const back=view.querySelector('[data-asmr-room-back]');back.addEventListener('click',backRoom);muteBtn.addEventListener('click',mute);
   window.addEventListener('keydown',down);window.addEventListener('keyup',up);window.addEventListener('blur',blur);
-  return {start,stop,destroy(){stop();buttons.forEach(b=>b.replaceWith(b.cloneNode(true)));back.removeEventListener('click',backRoom);muteBtn.removeEventListener('click',mute);window.removeEventListener('keydown',down);window.removeEventListener('keyup',up);window.removeEventListener('blur',blur);audio?.close()}};
+  return {start,stop,destroy(){stop();touchCleanup.forEach(fn=>fn());buttons.forEach(b=>b.replaceWith(b.cloneNode(true)));back.removeEventListener('click',backRoom);muteBtn.removeEventListener('click',mute);window.removeEventListener('keydown',down);window.removeEventListener('keyup',up);window.removeEventListener('blur',blur);audio?.close()}};
 };
