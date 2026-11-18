@@ -1,0 +1,61 @@
+/* v37: physical cover flip; the underlying two-page diary is revealed while the cover swings. */
+.diary-cover-screen{
+  perspective:1600px;
+  perspective-origin:50% 50%;
+  background:transparent;
+  transition:none;
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+  isolation:isolate;
+}
+.diary-cover-screen::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle,#ffffff2a 1px,transparent 1px) 0 0/12px 12px,#68483a;
+  z-index:-1;opacity:1;
+}
+.diary-cover-screen.is-open{visibility:hidden;pointer-events:none;}
+.diary-cover-screen.is-open::before{opacity:0;}
+.diary-cover-book{
+  transform-origin:0% 50%;
+  backface-visibility:visible;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.diary-cover-book::after{
+  content:"";position:absolute;inset:0;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#d6a0ba,#f5d3e1 40%,#c67e9e);
+  transform:rotateY(180deg) translateZ(1px);
+  backface-visibility:hidden;
+  pointer-events:none;
+}
+.diary-cover-label,.diary-cover-strap,.diary-cover-hint,.diary-cover-book>.diary-keyring{
+  backface-visibility:hidden;
+}
+.diary-cover-screen.is-opening .diary-cover-book{
+  animation:diary-front-open .95s cubic-bezier(.42,.04,.2,1) both;
+}
+.diary-cover-screen.is-closing .diary-cover-book{
+  animation:diary-front-close .95s cubic-bezier(.42,.04,.2,1) both;
+}
+.diary-cover-screen.is-opening::before{animation:diary-backdrop-out .95s ease both;}
+.diary-cover-screen.is-closing::before{animation:diary-backdrop-in .95s ease both;}
+/* translateX(50%) places the hinge at the diary's central binder; rotateY flips the front to the left. */
+@keyframes diary-front-open{
+  0%{transform:translateX(0) rotateY(0deg);filter:brightness(1)}
+  32%{filter:brightness(.9)}
+  65%{filter:brightness(.84)}
+  100%{transform:translateX(50%) rotateY(-179deg);filter:brightness(1)}
+}
+@keyframes diary-front-close{
+  0%{transform:translateX(50%) rotateY(-179deg);filter:brightness(1)}
+  35%{filter:brightness(.85)}
+  100%{transform:translateX(0) rotateY(0deg);filter:brightness(1)}
+}
+@keyframes diary-backdrop-out{0%,18%{opacity:1}75%{opacity:.12}100%{opacity:0}}
+@keyframes diary-backdrop-in{0%{opacity:0}70%{opacity:.65}100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .diary-cover-screen.is-opening .diary-cover-book,.diary-cover-screen.is-closing .diary-cover-book,
+  .diary-cover-screen.is-opening::before,.diary-cover-screen.is-closing::before{animation:none;}
+}

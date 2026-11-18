@@ -1,0 +1,147 @@
+/* Site theme is a color layer: original diary artwork is preserved. */
+.site-theme-picker{position:fixed;right:16px;bottom:16px;z-index:9990;display:flex;align-items:center;gap:8px;background:#fff9f5;border:2px solid #95695f;border-radius:14px;padding:8px 11px;box-shadow:0 5px 18px #4a2a302b;font:600 12px/1.4 sans-serif;color:#6e4d4a}
+.site-theme-picker select,.room-theme-bar select{border:1px solid #cba9a4;background:white;border-radius:9px;padding:5px 8px;font:inherit;color:#59423c;max-width:175px}
+.room-theme-bar{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:4px 0 9px;font:600 12px/1.4 sans-serif;color:#775451}
+html[data-site-theme="mint"] .site-theme-picker{background:#effaf4;border-color:#678d7e;color:#456e62}
+html[data-site-theme="mint"] .site-theme-picker select{border-color:#96c4b4;background:#fafffc}
+html[data-site-theme="mint"] .page-title{color:#568f7d}
+html[data-site-theme="mint"] .room-theme-bar{color:#568f7d}
+@media(max-width:600px){.site-theme-picker{right:8px;bottom:8px;padding:6px;font-size:11px}.site-theme-picker select{max-width:110px}.room-theme-bar{justify-content:flex-start;flex-wrap:wrap}}
+
+/* Mint theme: supplied PNG artwork. Strawberry uses the original styles. */
+html[data-site-theme="mint"] body{background-color:#58786f;background-image:radial-gradient(circle,rgba(226,255,245,.15) .7px,transparent .9px)}
+
+html[data-site-theme="mint"] .wrapper>.main>.top .counter{background-image:url("theme-assets/mint/mint-01.png") !important}
+html[data-site-theme="mint"] .wrapper>.main{background-image:url("theme-assets/mint/mint-02.png") !important}
+html[data-site-theme="mint"] .wrapper::before{background-image:url("theme-assets/mint/mint-03.png") !important}
+html[data-site-theme="mint"] .diary-cover-book .diary-cover-strap{background-image:url("theme-assets/mint/mint-05.png") !important}
+html[data-site-theme="mint"] .diary-cover-screen.is-opening .diary-cover-book .diary-cover-strap{background-image:url("theme-assets/mint/mint-06.png") !important}
+html[data-site-theme="mint"] .diary-cover-screen.is-open .diary-cover-book .diary-cover-strap{background-image:url("theme-assets/mint/mint-06.png") !important}
+html[data-site-theme="mint"] .wrapper>.main>.top{background-image:url("theme-assets/mint/mint-09.png") !important}
+html[data-site-theme="mint"] .wrapper>.main>.menu button.active{background-image:url("theme-assets/mint/mint-10.png") !important}
+html[data-site-theme="mint"] .wrapper>.main>.menu button{background-image:url("theme-assets/mint/mint-11.png") !important}
+html[data-site-theme="mint"] .wrapper>.main>.sidebar{background-image:url("theme-assets/mint/mint-13.png") !important}
+
+html[data-site-theme="mint"] .wrapper>.main::after{background-image:url("theme-assets/mint/mint-14.png") !important}
+html[data-site-theme="mint"] .wrapper>.main>.top h1,html[data-site-theme="mint"] .wrapper>.main>.top p{color:#56776b}
+html[data-site-theme="mint"] .wrapper>.main>.menu button{color:#f4fff9}
+html[data-site-theme="mint"] .wrapper>.main>.menu button.active{color:#50766b}
+
+html[data-site-theme="mint"] .wrapper>.diary-close-btn{background-image:url("theme-assets/mint/mint-04.png") !important}
+html[data-site-theme="mint"] .wrapper>.diary-keyring,html[data-site-theme="mint"] .diary-cover-leaf>.diary-keyring{background-image:url("theme-assets/mint/mint-17.png") !important}
+
+/* 2026-11-16: Mint-choco correction. Only pink -> mint; chocolate remains brown. */
+html[data-site-theme="mint"] body,html[data-site-theme="mint"]{background-color:#68483a!important;background-image:radial-gradient(circle,rgba(255,232,220,.19) .7px,transparent .9px)!important;background-size:12px 12px!important}
+/* The actual left and right paper layers are the sidebar and the stationary ::after,
+   not the scrolling .content (whose background must remain transparent). */
+html[data-site-theme="mint"] .wrapper>.main>.sidebar{background-image:url("theme-assets/mint/mint-13.png")!important}
+html[data-site-theme="mint"] .wrapper>.main::after{background-image:url("theme-assets/mint/mint-14.png")!important;display:block!important}
+html[data-site-theme="mint"] .wrapper>.main>.content{background-image:none!important;background-color:transparent!important}
+/* Original chocolate lettering is not a theme color. */
+html[data-site-theme="mint"] .wrapper>.main>.top h1,
+html[data-site-theme="mint"] .wrapper>.main>.top p,
+html[data-site-theme="mint"] .wrapper>.main>.top .small{color:#806b68!important}
+/* The cover's editable image window is underneath its cutout PNG. */
+html[data-site-theme="mint"] .diary-cover-book .diary-cover-photo{background-color:#d9f2f1!important}
+/* MP3: change the pink display area, not its brown text or outer shell. */
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-pink-screen{background:linear-gradient(155deg,#e6f6f8,#cce9ee)!important;border-top-color:#a6cdd5!important}
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-screen{background:#e4f4f7!important}
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-track.is-current{background:#bce1e9!important}
+
+/* Mint cover artwork replaces ONLY the foreground PNG overlay.
+   Keep the editable oval photo and its title underneath. */
+html[data-site-theme="mint"] .diary-cover-book .diary-cover-leaf::after {
+  background-image:url("theme-assets/mint/mint-00.png") !important;
+  background-position:left top !important;
+  background-size:672px 950px !important;
+  background-repeat:no-repeat !important;
+}
+html[data-site-theme="mint"] .diary-cover-book .diary-cover-leaf {
+  background:none !important;
+}
+
+
+/* Mint rabbit: same 488px height as the bear, independently anchored for its wider PNG.
+   The top loop is behind the diary; the body swings outward, away from the cover. */
+html[data-site-theme="mint"] .diary-cover-book > .diary-keyring,
+html[data-site-theme="mint"] .diary-cover-leaf > .diary-keyring {
+  left:-215px !important;
+  top:52px !important;
+  width:332px !important;
+  height:488px !important;
+  background:url("theme-assets/mint/mint-17.png") center / contain no-repeat !important;
+  transform-origin:63% 7.5% !important;
+  transform:rotate(13deg);
+  z-index:0 !important;
+  pointer-events:auto !important;
+}
+/* The open diary has a different coordinate origin; place rabbit behind main book (z=2). */
+html[data-site-theme="mint"] .wrapper > .diary-keyring {
+  left:37px !important;
+  top:110px !important;
+  width:332px !important;
+  height:488px !important;
+  background:url("theme-assets/mint/mint-17.png") center / contain no-repeat !important;
+  transform-origin:63% 7.5% !important;
+  transform:rotate(13deg);
+  z-index:-1 !important;
+  pointer-events:auto !important;
+}
+@keyframes mint-rabbit-outward-swing {
+  0%,100% { transform:rotate(13deg) }
+  22% { transform:rotate(26deg) }
+  48% { transform:rotate(4deg) }
+  72% { transform:rotate(18deg) }
+}
+html[data-site-theme="mint"] .diary-cover-book > .diary-keyring.is-swinging,
+html[data-site-theme="mint"] .diary-cover-leaf > .diary-keyring.is-swinging,
+html[data-site-theme="mint"] .wrapper > .diary-keyring.is-swinging {
+  animation:mint-rabbit-outward-swing .9s ease-in-out !important;
+}
+
+
+/* MP3 colors only — do not alter sizing, positioning or other UI. */
+/* Both themes: neutral gray hardware-button shadows on the closed player. */
+.bgm-panel.is-collapsed .bgm-top .bgm-btn {
+  box-shadow: inset 0 1px 1px #ffffff, 0 1px 3px #8f929a80 !important;
+}
+.bgm-panel.is-collapsed .bgm-pocket-controls {
+  box-shadow: inset 1px 2px 4px #9398a480 !important;
+}
+.bgm-panel.is-collapsed .bgm-pocket-controls button[data-pocket-play] {
+  box-shadow: inset 0 1px 1px #ffffff, 0 1px 3px #969aa380 !important;
+}
+/* Mint theme: ONLY the track-title LCD on the closed player turns sky blue. */
+html[data-site-theme="mint"] .bgm-panel.is-collapsed .bgm-pocket-lcd {
+  background:linear-gradient(125deg,#d9eaf2,#eef8fc 55%,#c3dce9) !important;
+  outline-color:#b6cbd4 !important;
+  box-shadow:inset 1px 2px 4px #8299a888 !important;
+}
+/* Both themes: closed-player control recess and play button use gray, never pink. */
+.bgm-panel.is-collapsed .bgm-pocket-controls {
+  border-color:#b8bcc2 !important;
+  background:linear-gradient(#f8f9fa,#d3d5da) !important;
+  box-shadow:inset 1px 2px 4px #9298a399 !important;
+}
+.bgm-panel.is-collapsed .bgm-pocket-controls button[data-pocket-play] {
+  background:linear-gradient(#fff,#d4d7dd) !important;
+  border:1px solid #aeb3bb !important;
+  box-shadow:inset 0 1px 1px #fff,0 1px 2px #8d949e80 !important;
+}
+/* Mint theme only: mint close button on the OPEN player. */
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-top .bgm-btn {
+  background: linear-gradient(#f3fffc,#b8e3df) !important;
+  border-color:#9fcfc9 !important;
+  color:#527e78 !important;
+  box-shadow: inset 0 1px 1px #ffffff, 0 1px 2px #87b5af80 !important;
+}
+/* Mint theme only: scrollbar inside the OPEN playlist. */
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-playlist {
+  scrollbar-color:#91c7d3 #dceff3 !important;
+}
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-playlist::-webkit-scrollbar-thumb {
+  background:#91c7d3 !important;
+}
+html[data-site-theme="mint"] .bgm-panel:not(.is-collapsed) .bgm-playlist::-webkit-scrollbar-track {
+  background:#dceff3 !important;
+}

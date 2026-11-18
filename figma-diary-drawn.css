@@ -1,0 +1,331 @@
+/*
+ * MY MINIHOME — Figma frames 1 (latched), 2 (open), 10 (unlatched)
+ * CSS shape recreation from the actual Figma geometry, not an invented cover.
+ * Place AFTER figma-layout.css. Existing HTML, JS, MP3 and bear art are untouched.
+ * Scene coordinates are Figma's 1920 x 1080 coordinate system.
+ */
+:root {
+  --figma-cover:#efb1d0;
+  --figma-strap:#eba4c7;
+  --figma-paper:#fdebf4;
+  --figma-back-left:#8b7676;
+  --figma-back-right:#968282;
+  --figma-star:#806767;
+  --figma-edge:#705763;
+  --figma-clip:#bda9a9;
+  --figma-memo:#bae4ef;
+  --figma-note-shadow:rgba(112,87,99,.25);
+}
+
+/* OPEN DIARY — two cover boards, exactly x309..660 and x660..1610.
+   The short left-hand protrusion is painted behind them by the wrapper. */
+.wrapper {
+  background-image:
+    radial-gradient(circle at 276px 139px,var(--figma-strap) 11px,transparent 11.5px),
+    radial-gradient(circle at 276px 169px,var(--figma-strap) 11px,transparent 11.5px),
+    linear-gradient(var(--figma-strap),var(--figma-strap));
+  background-size:22px 22px,22px 22px,88px 30px;
+  background-position:265px 128px,265px 158px,265px 139px;
+  background-repeat:no-repeat;
+}
+.wrapper::before {
+  content:"";display:block;
+  position:absolute;left:309px;top:52px;width:1301px;height:945px;
+  background:linear-gradient(90deg,#eba4c7 0 351px,#efb1d0 351px 100%) !important;
+  border-radius:35px 30px 35px 30px;
+  box-shadow:0 4px 0 var(--figma-edge) !important;
+  border:0;pointer-events:none;z-index:0;
+}
+/* Original decorative clip PNG, displayed at its native 87 × 122 size. */
+.wrapper::after {
+  content:"";
+  position:absolute;
+  display:block;
+  left:1390px;
+  top:88px;
+  width:70px;
+  height:98px;
+  box-sizing:border-box;
+  background:transparent url("assets/images/꾸밈 클립.png") center / contain no-repeat;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  transform:none;
+  clip-path:none;
+  filter:none;
+  pointer-events:none;
+  z-index:8;
+}
+/* The brown boards from Frame 2: 317px left + 908px right. */
+.wrapper>.main {
+  background:linear-gradient(90deg,var(--figma-back-left) 0 317px,var(--figma-back-right) 317px 100%) !important;
+  border-radius:23px;box-shadow:0 3px 1px rgba(77,55,63,.14);
+}
+/* The Figma paper lies underneath scrolling content. */
+.wrapper>.main>.sidebar {
+  background:var(--figma-paper) !important;
+  border-radius:3px;box-shadow:0 4px 0 var(--figma-note-shadow);
+  height:822px;
+}
+.wrapper>.main::after {
+  display:block;content:"";
+  position:absolute;left:326px;top:32px;width:871px;height:822px;
+  background:var(--figma-paper) !important;
+  border-radius:3px;
+  box-shadow:0 4px 0 var(--figma-note-shadow);
+  pointer-events:none;z-index:3;
+}
+/* Four 49x18 metallic rings at 231, 286, 730 and 785 in Frame 2.
+   CSS gradients keep the original spatial interval and metal coloring. */
+.wrapper>.main::before {
+  content:"";display:block;position:absolute;
+  left:292px;top:148px;width:49px;height:572px;
+  background-image:
+    linear-gradient(90deg,#efefef 0,#d8d7d7 52%,#b5b1b1 100%),
+    linear-gradient(90deg,#efefef 0,#d8d7d7 52%,#b5b1b1 100%),
+    linear-gradient(90deg,#efefef 0,#d8d7d7 52%,#b5b1b1 100%),
+    linear-gradient(90deg,#efefef 0,#d8d7d7 52%,#b5b1b1 100%) !important;
+  background-repeat:no-repeat !important;
+  background-size:49px 18px !important;
+  background-position:0 0,0 55px,0 499px,0 554px !important;
+  filter:drop-shadow(0 1px 0 #a39797);
+  border:0;box-shadow:none;clip-path:none;border-radius:9px;
+  pointer-events:none;z-index:9;
+}
+/* Seven index tabs, Figma's x1479 inactive and x1540 selected. */
+.wrapper>.main>.menu button,
+.wrapper>.main>.menu button:not(.active),
+.wrapper>.main>.menu button:not(.active):hover,
+.wrapper>.main>.menu button:not(.active):focus-visible {
+  background:#806767 !important;
+  background-image:none !important;
+  border:0 !important;border-radius:11px !important;
+  box-shadow:0 4px 0 var(--figma-note-shadow) !important;
+  transform:none !important;
+}
+.wrapper>.main>.menu button.active,
+.wrapper>.main>.menu button.active:hover,
+.wrapper>.main>.menu button.active:focus-visible,
+.wrapper>.main>.menu button.active:active {
+  background:var(--figma-paper) !important;
+  background-image:none !important;
+  border:0 !important;
+  border-radius:0 11px 11px 0 !important;
+  box-shadow:0 4px 0 var(--figma-note-shadow) !important;
+  transform:none !important;
+}
+/* The memo is blue in the user's Frame 2, not pink or white. */
+.wrapper>.main>.top {
+  left:371px;top:-47px;width:287px;height:79px;
+  background:var(--figma-memo) !important;
+  border:0;border-radius:0;box-shadow:5px 0 0 var(--figma-note-shadow);
+  overflow:visible;
+}
+.wrapper>.main>.top::before {
+  content:"";display:block;position:absolute;
+  width:36px;height:46px;right:0;top:1px;
+  background:#a2d9e9;
+  clip-path:polygon(0 0,100% 0,100% 100%);
+  z-index:1;pointer-events:none;
+}
+.wrapper>.main>.top::after {display:none}
+/* Visitor counter: Frame 2 pale yellow clip, actual circular punched hole. */
+.wrapper>.figma-visitor-counter {
+  left:397px;top:28px;width:210px;height:100px;
+  background:none !important;
+  border:0;border-radius:0;box-shadow:none;
+}
+.wrapper>.figma-visitor-counter::before {
+  content:"";position:absolute;left:0;top:53px;
+  width:210px;height:47px;background:#f7e8c7;
+  border-radius:9px 9px 2px 2px;
+  box-shadow:0 3px 0 var(--figma-note-shadow);
+}
+.wrapper>.figma-visitor-counter::after {
+  content:"";position:absolute;left:74px;top:0;
+  width:62px;height:62px;border-radius:50%;
+  background:radial-gradient(circle,transparent 0 9px,#968282 10px 12px,#f7e8c7 13px);
+}
+.wrapper>.figma-visitor-counter .counter-labels {z-index:2}
+/* Open latch: Figma x1610,y491 196x97, with a small brown plus. */
+.wrapper>.diary-close-btn,
+.wrapper>.diary-close-btn:hover,
+.wrapper>.diary-close-btn:focus-visible,
+.wrapper>.diary-close-btn:active {
+  position:absolute;left:1610px;right:auto;top:491px;
+  width:196px;height:97px;padding:0;margin:0;
+  border:0 !important;border-radius:0 50px 50px 0 !important;
+  background:#efb1d0 !important;
+  background-image:none !important;
+  box-shadow:0 4px 0 var(--figma-edge) !important;
+  color:transparent;font-size:0;transform:none;
+  z-index:1;cursor:pointer;
+}
+.wrapper>.diary-close-btn::before,
+.wrapper>.diary-close-btn::after {
+  content:"";display:block;position:absolute;
+  background:var(--figma-star);border-radius:2px;
+  pointer-events:none;
+}
+.wrapper>.diary-close-btn::before{left:141px;top:34px;width:5px;height:24px}
+.wrapper>.diary-close-btn::after{left:131px;top:43px;width:24px;height:5px}
+
+/* CLOSED / OPENING — Figma Frames 1 and 10.
+   Main cover is x643,y57 614x945, tab is x585,y131 88x52.
+   THE THREE STARS ARE CSS CLIPPED SHAPES, not a replacement PNG. */
+.diary-cover-book,
+.diary-cover-screen .diary-cover-book {
+  background:none !important;
+  border:0;border-radius:0;box-shadow:none;
+}
+.diary-cover-book::before {
+  content:"";display:block;position:absolute;
+  left:0;top:74px;width:88px;height:52px;
+  background:#efb1d0;border-radius:11px;
+  box-shadow:0 4px 0 var(--figma-edge);
+  z-index:0;pointer-events:none;
+}
+.diary-cover-book::after{display:none}
+.diary-cover-leaf,
+.diary-cover-book>.diary-cover-leaf {
+  position:absolute;inset:auto;left:58px;top:0;
+  width:614px;height:945px;
+  border:0 !important;border-radius:35px !important;
+  background:#efb1d0 !important;background-image:none !important;
+  box-shadow:0 4px 0 var(--figma-edge) !important;
+  overflow:hidden;transform:none;
+  z-index:1;
+}
+/* The original big left-side five-point star (partially cut by the cover). */
+.diary-cover-leaf::before {
+  content:"";display:block;position:absolute;
+  left:-82px;top:353px;width:302px;height:344px;
+  background:var(--figma-star);
+  clip-path:polygon(47% 0,64% 34%,100% 31%,79% 60%,91% 98%,53% 78%,17% 100%,27% 61%,0 41%,34% 35%);
+  transform:rotate(-8deg);z-index:1;
+  border:0;pointer-events:none;
+}
+.diary-cover-leaf::after {display:none}
+/* Small star top-right, then the exact 408x181 pale pink oval above it. */
+.diary-cover-book .diary-cover-label {
+  position:absolute;display:block !important;
+  left:113px;top:100px;width:408px;height:181px;
+  background:none !important;border:0;border-radius:0;
+  font-size:0;color:transparent;pointer-events:none;overflow:visible;
+  z-index:3;
+}
+.diary-cover-label strong,.diary-cover-label span {display:none !important}
+.diary-cover-book .diary-cover-label::before {
+  content:"";display:block;position:absolute;
+  left:363px;top:80px;width:138px;height:159px;
+  background:var(--figma-star);
+  clip-path:polygon(50% 0,62% 34%,98% 37%,71% 61%,80% 98%,50% 76%,18% 98%,29% 61%,2% 37%,38% 34%);
+  z-index:0;
+}
+.diary-cover-book .diary-cover-label::after {
+  content:"";display:block;position:absolute;
+  left:0;top:0;width:408px;height:181px;
+  border-radius:50%;background:var(--figma-paper);
+  box-shadow:inset 0 4px 4px rgba(0,0,0,.25);
+  z-index:1;
+}
+/* Third lower-right star, clipped at the cover's right edge. */
+.diary-cover-book>.diary-cover-hint {
+  display:block !important;position:absolute;
+  left:499px;top:642px;width:230px;height:256px;
+  margin:0;padding:0;border:0;
+  background:var(--figma-star);
+  clip-path:polygon(50% 0,62% 35%,98% 36%,71% 60%,81% 98%,50% 77%,18% 98%,29% 60%,2% 36%,39% 35%);
+  mask-image:linear-gradient(to right,#000 75.2%,transparent 75.2%);
+  color:transparent;font-size:0;line-height:0;pointer-events:none;
+  z-index:2;
+}
+/* Latch on Frame 1: 241x119, mint four-hole snap button. */
+.diary-cover-book .diary-cover-strap,
+.diary-cover-book .diary-cover-strap:hover,
+.diary-cover-book .diary-cover-strap:focus-visible,
+.diary-cover-book .diary-cover-strap:active {
+  position:absolute;left:466px;top:413px;right:auto;
+  width:241px;height:119px;margin:0;padding:0;
+  border:0 !important;border-radius:50px 20px 20px 50px !important;
+  background:#eba4c7 !important;background-image:none !important;
+  box-shadow:0 4px 0 1px var(--figma-edge) !important;
+  color:transparent;font-size:0;line-height:0;
+  transform:none;z-index:5;cursor:pointer;
+}
+.diary-cover-book .diary-cover-strap::before {
+  content:"" !important;display:block !important;position:absolute;
+  left:34px;top:30px;width:59px;height:59px;
+  border:0;border-radius:50%;
+  background:#e4f3ef !important;
+  box-shadow:inset 0 -4px 5px rgba(0,0,0,.22);
+  transform:none !important;pointer-events:none;
+}
+.diary-cover-book .diary-cover-strap::after {
+  content:"" !important;display:block !important;position:absolute;
+  left:34px;top:30px;width:59px;height:59px;
+  border:0;border-radius:50%;
+  background:
+    radial-gradient(circle 4px at 33% 51%,#efb1d0 99%,transparent 100%),
+    radial-gradient(circle 4px at 51% 35%,#efb1d0 99%,transparent 100%),
+    radial-gradient(circle 4px at 51% 68%,#efb1d0 99%,transparent 100%),
+    radial-gradient(circle 4px at 68% 51%,#efb1d0 99%,transparent 100%) !important;
+  box-shadow:none;transform:none !important;pointer-events:none;
+}
+/* In Frame 10 the same body remains; only the latch shifts to x1257. */
+.diary-cover-screen.is-opening .diary-cover-book .diary-cover-strap {
+  left:672px;top:413px;width:240px;height:119px;
+  border-radius:0 50px 50px 0 !important;
+  background:#eba4c7 !important;
+  box-shadow:0 4px 0 var(--figma-edge) !important;
+  transform:none;
+}
+.diary-cover-screen.is-opening .diary-cover-book .diary-cover-strap::before {
+  left:173px;top:42px;width:7px;height:29px;
+  border-radius:2px;background:var(--figma-star) !important;box-shadow:none;
+}
+.diary-cover-screen.is-opening .diary-cover-book .diary-cover-strap::after {
+  left:161px;top:53px;width:30px;height:7px;
+  border-radius:2px;background:var(--figma-star) !important;box-shadow:none;
+}
+/* Preserve existing click handlers and the scene's bear-only bitmap art. */
+
+/* Figma-perfect custom shapes: CSS paths follow the actual star and wire boundaries,
+   traced once from the user's original Figma-exported RGBA layers (not runtime images).
+   This corrects the earlier guessed star angles and imagined paperclip outline. */
+.diary-cover-leaf::before {
+  content:"";display:block;position:absolute;
+  left:-58px;top:0;width:708px;height:972px;
+  background:#806767 !important;
+  clip-path:path('M 603 180 L 601 181 L 578 228 L 559 230 L 544 242 L 536 246 L 537 249 L 561 276 L 548 329 L 549 331 L 554 332 L 594 309 L 597 309 L 634 336 L 640 337 L 642 335 L 636 291 L 636 280 L 671 249 L 671 240 L 625 231 L 622 227 L 607 181 Z M 124 353 L 120 356 L 112 458 L 109 461 L 58 483 L 58 521 L 113 552 L 125 657 L 130 660 L 189 590 L 194 586 L 283 612 L 289 611 L 290 607 L 242 516 L 242 511 L 287 425 L 287 421 L 285 419 L 192 435 L 187 431 L 127 354 Z M 598 698 L 591 702 L 541 749 L 537 749 L 476 728 L 473 728 L 470 732 L 495 802 L 453 860 L 451 867 L 453 869 L 460 869 L 522 860 L 526 863 L 562 920 L 568 919 L 587 845 L 594 841 L 657 818 L 656 812 L 598 776 L 597 772 L 601 716 L 601 700 Z');
+  transform:none !important;z-index:1;
+}
+.diary-cover-book .diary-cover-label::before {display:none !important}
+.diary-cover-book>.diary-cover-hint {display:none !important}
+
+.wrapper>.main::before {
+  -webkit-mask: radial-gradient(circle at center,#000 99%,transparent 100%) 0 0px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 0px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 0px/18px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 0 55px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 55px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 55px/18px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 0 499px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 499px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 499px/18px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 0 554px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 554px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 554px/18px 18px no-repeat;
+  mask: radial-gradient(circle at center,#000 99%,transparent 100%) 0 0px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 0px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 0px/18px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 0 55px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 55px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 55px/18px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 0 499px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 499px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 499px/18px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 0 554px/18px 18px no-repeat,
+    linear-gradient(#000,#000) 9px 554px/31px 18px no-repeat,
+    radial-gradient(circle at center,#000 99%,transparent 100%) 31px 554px/18px 18px no-repeat;
+}

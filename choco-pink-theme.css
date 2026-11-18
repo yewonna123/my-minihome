@@ -1,0 +1,461 @@
+/* CHOCO x PINK — visual theme, loaded last. Edit the variables to recolor. */
+:root{--choco:#493036;--choco-dark:#332128;--milk:#fffdf8;--pink:#e4a1bf;--pink-soft:#f8e3ee;--rose:#a64e78;--border:#936879;--muted:#73535f}
+body{color:var(--choco);background-color:#5b3b43;background-image:radial-gradient(#704a58 1px,transparent 1px);background-size:13px 13px}
+.wrapper{background:#e7a5c2;border:2px solid #593440;box-shadow:0 7px 0 #40222b29,0 14px 32px #321b252a;padding:11px}
+/* Compact, classic minihome-like top strip */
+.wrapper>.top{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"title counter" "subtitle bgm";align-items:center;gap:1px 16px;text-align:left;padding:11px 17px;min-height:0;background:linear-gradient(90deg,#e5a1c1,#f4d1e1);border:1px solid #c98baa;border-bottom:3px double #ae7394;border-radius:3px}
+.wrapper>.top h1{grid-area:title;font-size:19px;line-height:1.35;letter-spacing:1px;color:var(--choco-dark);font-weight:700;margin:0;overflow-wrap:anywhere}
+.wrapper>.top p{grid-area:subtitle;font-size:11px;line-height:1.4;color:#795968;margin:0}
+.wrapper>.top .counter{grid-area:counter;text-align:right;white-space:nowrap;color:#654653;font-size:11px;letter-spacing:.5px}
+.wrapper>.top .counter span{color:#a64e78;font-weight:700}
+.wrapper>.top .small{grid-area:bgm;text-align:right;font-size:11px;color:#795166;white-space:normal;min-width:0}
+.main{margin-top:11px}
+.sidebar,.content{background:#fffdf8;border:1px solid var(--border)}
+.profile{border-bottom-color:#f1d8e4}
+.profile-heading,.profile-info h3,.profile-job,.profile-intro,.profile-link,.profile-link span{color:var(--choco)}
+.profile-english-name{color:var(--muted)}
+.profile-photo{background:#fff6fa;border-color:#dfb5ca}
+.profile-photo-placeholder{color:#af7893}
+.profile-more{background:#fbe8f1;color:var(--choco);border-color:#dcb3c8}
+.profile-more:hover{background:#f1c3d9}
+
+
+
+.page-title{color:var(--choco);border-bottom-color:#c98baa}
+.welcome,.game-area{background:#fff5fa;border-color:#e8c2d5}
+.welcome h2,.notice-title{color:#9b4f78}
+.notice{background:#fffdf8;border-color:#eed7e2}
+.small{color:var(--muted)}
+.game-button,.guestbook-submit{background:#86544f;color:#fffaf8}
+.game-button:hover,.guestbook-submit:hover{background:#a26b66}
+/* Behind page */
+.behind-page{color:var(--choco)}
+.behind-hero{background:linear-gradient(135deg,#fff7fb,#fffdf8);border-color:#e2bad0}
+.behind-hero h2,.behind-entry h3{color:#693c53}
+.behind-eyebrow,.behind-number,.behind-credit span{color:#a55b80}
+.behind-hero p,.behind-credit strong,.behind-end{color:#79596a}
+.behind-credit>div,.behind-entry{background:#fffdf8;border-color:#e9c9d9}
+.behind-entry-featured{background:#fff5fa}
+/* Guestbook */
+.guestbook-page{color:var(--choco)}
+.guestbook-intro{background:#fff0f3;border-color:#e1b9cf}
+.guestbook-intro h2,.guestbook-heading,.guestbook-card-head strong{color:#74405c}
+.guestbook-intro span,.guestbook-form label{color:#a65e82}
+.guestbook-intro p,.guestbook-form-bottom>span,.guestbook-card-head time,.guestbook-note{color:#866678}
+.guestbook-form,.guestbook-card{background:#fffdf8;border-color:#ead1df}
+.guestbook-form textarea{background:#ffffff;border-color:#e3bfd3;color:var(--choco)}
+.guestbook-heading{border-bottom-color:#d5a0bd}
+.guestbook-empty{border-color:#e3c0d2;color:#866476}
+/* BGM widget */
+.bgm-panel{color:var(--choco);background:#fffdf8;border-color:#b27e9a}
+.bgm-top{background:#f8deeb;border-bottom-color:#c98baa}
+.bgm-top strong,.bgm-title{color:var(--choco)}
+.bgm-btn{background:#fffdf8;border-color:#dfb4ca;color:var(--choco)}
+.bgm-btn:hover,.bgm-play,.bgm-track.is-current{background:#fae6f0}
+.bgm-mini-label,.bgm-source,.bgm-video-label,.bgm-note,.bgm-track{color:#876478}
+.bgm-volume input{accent-color:#a65c83}
+.bgm-playlist{border-top-color:#e7c8d8}
+/* Broad site accent colors for external modules without changing their mechanics */
+:where(.content,.sidebar) a{color:#9b4f78}
+:where(.content,.sidebar) input:focus,:where(.content,.sidebar) textarea:focus{outline-color:#bf7ca0}
+@media(max-width:650px){.wrapper>.top{grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "subtitle" "counter" "bgm";gap:4px;padding:11px 12px}.wrapper>.top .counter,.wrapper>.top .small{text-align:left}.wrapper>.top h1{font-size:18px}}
+
+/* V2: stronger chocolate / warm ivory across the home page */
+.home-page{color:#493036}
+.home-welcome{background:linear-gradient(130deg,#e3a0c0,#f8dce9);border:1px solid #936879;color:#493036;box-shadow:none}
+.home-welcome h2{color:#493036}
+.home-welcome p,.home-eyebrow{color:#694657}
+.home-section{background:#fffdf8;border-color:#d1a0b8}
+.home-section-heading{border-color:#d1a0b8;background:#f5d9e7}
+.home-section-heading h3{color:#493036}
+.home-date{color:#785766}
+.home-view-all{color:#7b4562;background:#f6dfeb;border-color:#ca93b0}
+.home-update{background:#f1c9dd;color:#493036;border:1px solid #c994ae}
+.home-work-card{background:#fffafc;border-color:#d0a2b9;color:#493036}
+.home-work-card:hover{background:#f8e2ed;border-color:#b77999}
+.home-work-card :is(h3,h4,strong,.work-title,.home-work-title){color:#493036}
+.home-work-card :is(p,small,span){color:#785767}
+/* Popup / detail overlays from portfolio and mini-game modules */
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup){background:#fffdf8;color:#493036;border-color:#ad7793}
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup) :is(h1,h2,h3,h4,strong){color:#493036}
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup) button{border-color:#ad7793}
+:where(.portfolio-modal,.work-modal,.project-modal,.modal-overlay,.popup-overlay,.lightbox-overlay,.arcade-overlay,.collection-overlay){backdrop-filter:blur(2px)}
+/* BGM: keep clear of the right-hand index tabs. */
+.bgm-panel{left:12px;right:auto;top:16px;bottom:auto;border-radius:9px;max-height:calc(100dvh - 32px);overflow:auto}
+.bgm-top{background:#e4a1bf}
+.bgm-body{background:#fffdf8}
+.bgm-track.is-current{background:#f3c9de}
+@media(max-width:650px){.bgm-panel{top:auto;bottom:10px;left:9px;right:auto;width:min(226px,calc(100vw - 18px));max-height:65dvh}}
+
+/* V3 — Cyworld-inspired header alignment: counter over profile, title over page */
+.wrapper>.top{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  grid-template-areas:"counter title" "counter subtitle" "counter bgm";
+  column-gap:15px;row-gap:2px;
+  align-items:center;
+  padding:10px 14px;
+  background:#f4d7e5;
+}
+.wrapper>.top .counter{
+  grid-area:counter;align-self:center;
+  justify-self:start;text-align:left;
+  padding:7px 8px;background:#fffdf8;
+  border:1px solid #d2a0b8;border-radius:3px;
+  font-size:12px;letter-spacing:0;
+}
+.wrapper>.top h1{
+  grid-area:title;justify-self:start;
+  text-align:left;font-size:24px;
+  line-height:1.35;letter-spacing:.3px;
+  color:#493036;margin:0;
+}
+.wrapper>.top p{grid-area:subtitle;text-align:left;font-size:12px;color:#785667}
+.wrapper>.top .small{grid-area:bgm;text-align:left;font-size:11px;color:#985a79}
+@media(max-width:650px){
+ .wrapper>.top{grid-template-columns:1fr;grid-template-areas:"counter" "title" "subtitle" "bgm";gap:5px;padding:11px 12px}
+ .wrapper>.top .counter{justify-self:start;padding:4px 7px;font-size:11px}
+ .wrapper>.top h1{font-size:21px}
+}
+
+/* V4: crisp cool pink + true ivory + deep chocolate; no sepia/beige washes */
+:root{--choco:#493036;--choco-dark:#332128;--milk:#fffdf8;--pink:#e4a1bf;--pink-soft:#f8e3ee;--rose:#a64e78;--border:#b27e9a;--muted:#785667}
+body{background-color:#593842;background-image:radial-gradient(#754d60 1px,transparent 1px);color:#493036}
+.wrapper{background:#e5a5c2;border-color:#53323f}
+.wrapper>.top{background:#f5d8e7;border-color:#c98baa;border-bottom-color:#b87a9b}
+.wrapper>.top .counter{background:#fffdf8;border-color:#d2a0b8}
+.sidebar,.content,.home-section{background:#fffdf8}
+.home-welcome{background:#f3c4db;border-color:#b67e9d}
+.home-section-heading,.home-update{background:#f7e1ed}
+.home-work-card,.notice{background:#fffafc}
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup){background:#fffdf8;color:#493036}
+.bgm-panel,.bgm-body{background:#fffdf8}
+.bgm-top{background:#e4a1bf}
+
+/* V5: BGM stays on RIGHT, moved UP to clear the side index. */
+.bgm-panel{position:fixed;left:auto;right:14px;top:12px;bottom:auto;width:226px;max-height:calc(100dvh - 24px);overflow:auto;border-radius:10px}
+@media(max-width:650px){.bgm-panel{left:auto;right:9px;top:8px;bottom:auto;width:min(226px,calc(100vw - 18px));max-height:65dvh}}
+
+/* V6 — REAL CHOCOLATE, not mauve. Strong neutral brown + cool pink + clean ivory. */
+:root{--choco:#38231B;--choco-dark:#24140F;--milk:#FFFDF9;--pink:#E7A3C7;--pink-soft:#FBE5F1;--rose:#AA4E82;--border:#8C6151;--muted:#735449}
+html{background:#38231B}
+body{background:#38231B;background-image:radial-gradient(#51352A 1px,transparent 1px);color:#38231B}
+.wrapper{background:#E7A3C7;border-color:#38231B;box-shadow:0 12px 0 #24140F33}
+.wrapper>.top{background:#F7D7E8;border-color:#9D6D5A}
+.wrapper>.top h1,.page-title,.sidebar strong,.content h1,.content h2{color:#38231B}
+.wrapper>.top p,.wrapper>.top .small{color:#67453B}
+.wrapper>.top .counter{background:#FFFDF9;color:#38231B;border-color:#8C6151}
+.sidebar,.content,.home-section,.diary{background:#FFFDF9;color:#38231B}
+/* Behind and Guestbook use the diary paper underneath; no extra ivory page rectangle. */
+.guestbook-page,.behind-page{background:transparent;color:#38231B}
+
+
+.home-welcome,.home-update,.home-section-heading,.guestbook-intro,.behind-hero{background:#F6D4E7;color:#38231B;border-color:#9D6D5A}
+.home-work-card,.notice,.guestbook-card,.guestbook-form,.behind-entry,.behind-credit>div{background:#FFFDF9;color:#38231B;border-color:#A68171}
+.home-work-card :is(h3,h4,strong,.work-title,.home-work-title),.behind-entry h3,.guestbook-intro h2{color:#38231B}
+.home-work-card :is(p,small,span),.behind-entry p,.guestbook-card p{color:#67453B}
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup){background:#FFFDF9;color:#38231B;border-color:#8C6151}
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup) :is(h1,h2,h3,h4,strong){color:#38231B}
+.bgm-panel{border-color:#38231B;left:auto;right:14px;top:12px;bottom:auto}
+.bgm-top{background:#E7A3C7;color:#38231B}
+.bgm-body{background:#FFFDF9;color:#38231B}
+.bgm-track.is-current{background:#F6D4E7}
+@media(max-width:650px){.bgm-panel{right:9px;top:8px;left:auto;bottom:auto}}
+
+/* V7: lighter cocoa brown and clearly visible original dotted background */
+:root{--choco:#68483A;--choco-dark:#4B3026;--milk:#FFFDF9;--border:#A17A6C;--muted:#76574C}
+html{background-color:#68483A}
+body{
+  background-color:#68483A;
+  background-image:radial-gradient(circle,#B38B7A 1.5px,transparent 1.7px);
+  background-size:13px 13px;
+  background-position:0 0;
+  color:#4B3026;
+}
+.wrapper{border-color:#68483A;box-shadow:0 12px 0 #4B302633}
+.wrapper>.top h1,.page-title,.sidebar strong,.content h1,.content h2{color:#4B3026}
+.wrapper>.top .counter{color:#4B3026;border-color:#A17A6C}
+.sidebar,.content,.home-section,.diary,.guestbook-page,.behind-page{color:#4B3026}
+
+
+.home-welcome,.home-update,.home-section-heading,.guestbook-intro,.behind-hero{color:#4B3026}
+.home-work-card,.notice,.guestbook-card,.guestbook-form,.behind-entry,.behind-credit>div{color:#4B3026;border-color:#A17A6C}
+.home-work-card :is(h3,h4,strong,.work-title,.home-work-title),.behind-entry h3,.guestbook-intro h2{color:#4B3026}
+:where(.portfolio-modal,.portfolio-popup,.work-modal,.work-popup,.project-modal,.project-popup,.modal-content,.popup-content,.lightbox-content,.arcade-modal,.arcade-popup,.claw-modal,.prize-modal,.collection-modal,.collection-popup,.result-modal,.result-popup){color:#4B3026;border-color:#A17A6C}
+.bgm-panel{border-color:#68483A}
+.bgm-top{color:#4B3026}
+
+
+/* V9: subtle, seamless dots on both root and body (including viewport edges). */
+html, body {
+  background-color:#68483A;
+  background-image:radial-gradient(circle,rgba(255,232,220,.19) .7px,transparent .9px);
+  background-size:12px 12px;
+  background-position:0 0;
+  background-repeat:repeat;
+  min-height:100%;
+}
+html { background-attachment:fixed; }
+body { min-height:100vh; background-attachment:fixed; }
+
+/* Actual portfolio popup selectors in portfolio.js / portfolio.css. */
+#project-overlay.project-overlay { background:rgba(42,26,22,.65); }
+#project-overlay .project-window { background:#FFFDF9; border:2px solid #8C6151; box-shadow:0 20px 70px rgba(38,20,15,.32); }
+#project-overlay .project-window-bar { background:#F3C6DC; border-bottom:1px solid #A17A6C; }
+#project-overlay .window-title { color:#4B3026; }
+#project-overlay .window-dot { background:#A95E81; }
+#project-overlay .project-close { background:#FFFDF9; border-color:#A17A6C; color:#4B3026; }
+#project-overlay .project-close:hover { background:#68483A; color:#FFFDF9; }
+#project-overlay .project-window-content { background:#FFFDF9; color:#4B3026; scrollbar-color:#C69AAF transparent; }
+#project-overlay .project-heading, #project-overlay .page-title { color:#4B3026; }
+#project-overlay .section-num, #project-overlay .project-facts dt { color:#A95E81; }
+#project-overlay .mini-action { background:#F8E3EE; border-color:#A17A6C; color:#4B3026; }
+#project-overlay .mini-action:hover { background:#E7A3C7; }
+#project-overlay .work-section, #project-overlay .project-facts, #project-overlay .portfolio-bottom-actions { border-color:#D8B8B2; }
+
+/* V10: index tabs — selected tab matches the ivory page, not the outer brown background. */
+
+
+
+
+/* V11 — selected index is an open paper tab: only the outer rim has a border. */
+
+
+
+
+
+/* V14: visual details only. No grid, position, width, offsets or layout changes. */
+/* Paper case: depth through shadows, without introducing another structural layer. */
+.wrapper{
+  border-width:3px;
+  box-shadow:0 2px 0 #F9E5EF,0 5px 0 #B989A4,0 8px 0 #805968,0 19px 28px #24140F38;
+}
+/* The existing two paper sheets stay in their original locations. */
+.sidebar,.content{
+  border-width:2px;
+  box-shadow:inset 0 0 0 2px #FFF9FC,2px 4px 0 #704C5830;
+}
+/* Gentle diary label and photo edge, no transforms or positioning. */
+.profile-heading{
+  background:linear-gradient(90deg,#F2C9DC,#F9E8F0);
+  border-left:4px solid #B8799B;
+  box-shadow:0 2px 0 #9A6B8240;
+}
+.profile-photo{
+  box-shadow:2px 3px 0 #C89FAE55,0 5px 11px #68483A1C;
+}
+.profile-more{box-shadow:2px 3px 0 #B68C9D55;}
+/* Visitor count as a printed paper label, same original coordinates. */
+.wrapper>.top .counter{
+  background:#FFF1D8;
+  border:2px solid #B68B79;
+  box-shadow:2px 3px 0 #926E7340;
+}
+/* Tab outlines only on the outer three edges, no repositioning. */
+
+
+/* Tiny paper stitch texture along the existing headings. */
+.notice-title,.menu-title{border-bottom:1px dashed #CFA9B8;}
+
+
+/* V16 — based strictly on V14: paper backing behind the TWO inner pages. */
+/* The backing is a real-looking separate sheet, not another outline around the case. */
+.wrapper > .main {
+  position:relative;
+  isolation:isolate;
+}
+.wrapper > .main::before {
+  content:"";
+  position:absolute;
+  inset:-9px -9px -10px -9px;
+  z-index:-1;
+  pointer-events:none;
+  background:#F0EFED;
+  border:2px solid #A69A9D;
+  border-radius:10px;
+  box-shadow:inset 0 0 0 3px #FFFDFB,0 3px 0 #C6BFC0,0 7px 11px rgba(53,32,35,.26);
+}
+/* Inactive tabs are fully saturated pink, with light lettering. */
+
+
+/* Selected tab opens onto the ivory page: border on outside edges only. */
+
+
+
+/* V17 — Match the simple illustrated mini-home mockup.
+   Keep existing grid, tabs, ring positions, content and interactions untouched. */
+.wrapper {
+  background:#D99FBE;
+  border:2px solid #805968;
+  border-radius:12px;
+  box-shadow:0 8px 0 #4B302633,0 16px 25px #24140F30;
+  padding:16px;
+}
+.wrapper > .top {
+  background:transparent;
+  border:0;
+  border-bottom:0;
+  border-radius:0;
+  box-shadow:none;
+  padding:4px 9px 12px;
+}
+.wrapper > .top h1 {color:#68483A;}
+.wrapper > .top p,.wrapper > .top .small {color:#68483A;}
+/* One clearly visible gray sheet behind both white pages. */
+.wrapper > .main {
+  position:relative;
+  isolation:isolate;
+  background:#E9E3E0;
+  border:1px solid #B6A6A4;
+  border-radius:9px;
+  padding:12px;
+  margin-top:0;
+  box-shadow:0 3px 0 #C7A0B0,0 6px 12px #68483A26;
+}
+.wrapper > .main::before {content:none;}
+.wrapper > .main > .sidebar,
+.wrapper > .main > .content {
+  background:#FFFDF9;
+  border:1px solid #C9B7B1;
+  border-radius:5px;
+  box-shadow:0 2px 3px #68483A18;
+}
+/* Preserve the index positioning and the original no-left-edge tab treatment. */
+
+
+
+@media(max-width:650px){
+  .wrapper{padding:10px;}
+  .wrapper > .main{padding:8px;}
+}
+
+/* V18 — bring index tabs flush to the inner content page; matching outlines. */
+@media (min-width: 801px) {
+  .wrapper > .main .menu { right:-100px; }
+}
+.wrapper > .main > .content {
+  border:2px solid #A17A6C;
+}
+
+/* The active tab meets the page without a double border at the seam. */
+
+
+/* V19 — profile page outline matches content page and index tabs. */
+.wrapper > .main > .sidebar {
+  border:2px solid #A17A6C;
+}
+
+
+/* V20 — compact proportions; preserve V19 frame, colors and index seam. */
+@media (min-width: 801px) {
+  .wrapper { margin-top:18px; margin-bottom:22px; padding:12px; }
+  .wrapper > .top { padding:2px 9px 8px; }
+  .wrapper > .main {
+    grid-template-columns:240px minmax(0,1fr);
+    gap:10px;
+    padding:10px;
+    align-items:start;
+  }
+  .wrapper > .main > .sidebar { padding:12px; }
+  .wrapper > .main > .content { padding:16px; min-height:400px; }
+  .wrapper > .main .menu { top:10px; }
+  
+  .sidebar .profile-photo { aspect-ratio:auto; height:165px; }
+  .sidebar .profile-info { margin-top:10px; }
+  .sidebar .profile-intro { margin:10px 0; padding:9px 0; }
+  .sidebar .profile { padding-bottom:10px; }
+  .sidebar .profile-heading { margin-bottom:8px; }
+  .sidebar .profile-links { gap:6px; }
+}
+/* Sidebar typography: slightly smaller, without shrinking main-page content. */
+.wrapper > .main > .sidebar { font-size:13px; line-height:1.55; }
+.sidebar .profile-info h3 { font-size:17px; }
+.sidebar .profile-english-name { font-size:12px; margin-bottom:5px; }
+.sidebar .profile-job { font-size:12.5px; line-height:1.5; }
+.sidebar .profile-intro { font-size:12.5px; line-height:1.65; }
+.sidebar .profile-link { font-size:12px; gap:6px; }
+.sidebar .profile-link span { font-size:14px; }
+.sidebar .profile-more { font-size:12px; }
+@media (min-width: 551px) and (max-width: 800px) {
+  .wrapper > .main { grid-template-columns:175px minmax(0,1fr); align-items:start; }
+  .wrapper > .main > .content { min-height:420px; }
+}
+
+/* V21 — equal inner padding on both paper pages; compact HOME. */
+.wrapper > .main > .sidebar,
+.wrapper > .main > .content {
+  padding:12px;
+  box-sizing:border-box;
+}
+/* Keep the page edges aligned; long pages can still grow naturally. */
+.wrapper > .main { align-items:stretch; }
+.wrapper > .main > .content { min-height:0; }
+.home-page { padding:0; }
+.home-page > .page-title { margin-bottom:10px; }
+.home-page > .home-section { margin-top:12px; margin-bottom:12px; }
+@media(max-width:650px){
+  .wrapper > .main > .sidebar,
+  .wrapper > .main > .content { padding:10px; }
+}
+
+/* V22 — synchronize the actual HEIGHT of the two paper pages (not padding).
+   A single grid row sizes both columns from the taller page; no clipping. */
+@media (min-width: 651px) {
+  .wrapper > .main {
+    display:grid;
+    grid-auto-rows:auto;
+    align-items:stretch;
+  }
+  .wrapper > .main > .sidebar,
+  .wrapper > .main > .content {
+    height:auto;
+    min-height:0;
+    max-height:none;
+    align-self:stretch;
+    box-sizing:border-box;
+  }
+}
+
+
+/* V24: wide cover, clickable charms, reliable image cursor */
+.diary-cover-screen{position:fixed;inset:0;z-index:9000;display:grid;place-items:center;padding:24px 44px;background:radial-gradient(circle,#ffffff2a 1px,transparent 1px) 0 0/12px 12px,#68483a;transition:opacity .45s,visibility .45s}
+.diary-cover-screen.is-open{opacity:0;visibility:hidden;pointer-events:none}
+.diary-cover-book{position:relative;width:min(1100px,calc(100vw - 160px));height:min(650px,calc(100dvh - 125px));min-height:300px;display:flex;align-items:center;justify-content:center;border:9px solid #d988b0;border-left:24px solid #c2769b;border-radius:24px 38px 38px 24px;background:linear-gradient(110deg,#d98eb4,#efb9d2 14%,#e6a0c2 90%,#ce7fa7);box-shadow:inset 6px 0 12px #8b466b55,inset -5px 0 10px #fff8,12px 17px 0 #42271e77,20px 27px 40px #21120e77}
+.diary-cover-book::before{content:"";position:absolute;inset:18px;border:2px dashed #fff5e8a6;border-radius:12px 28px 28px 12px;pointer-events:none}
+.diary-cover-label{position:absolute;top:12%;left:50%;transform:translateX(-50%);box-sizing:border-box;width:min(460px,70%);padding:30px 15px;text-align:center;border:3px double #946955;border-radius:50% / 35%;background:#fff9ed;color:#68483a;box-shadow:4px 6px 0 #8b536055}
+.diary-cover-label strong{display:block;font-size:clamp(22px,4vw,36px);letter-spacing:2px;font-weight:700}
+.diary-cover-label span{display:block;margin-top:10px;font-size:13px;letter-spacing:2px}
+.diary-cover-strap{position:absolute;right:-28px;top:41%;width:92px;height:65px;border:4px solid #8c536a;border-radius:15px;background:#b86f91;box-shadow:3px 4px 0 #58374455;display:grid;place-items:center;color:#fffaf3;font-size:26px}
+.diary-cover-strap:hover{background:#a85e82}
+.diary-cover-hint{position:absolute;bottom:-57px;left:0;right:0;text-align:center;color:#fff4ee;font-size:13px}
+.diary-close-btn{position:absolute;top:-31px;left:16px;z-index:20;border:2px solid #8c6151;border-radius:9px 9px 0 0;background:#f8dce9;color:#68483a;padding:5px 13px;font-size:12px}
+.diary-close-btn:hover{background:#fffdf9}
+.diary-keyring{position:absolute;left:-28px;top:54px;z-index:30;width:52px;padding:0;border:0;background:transparent;display:flex;align-items:center;flex-direction:column;transform-origin:26px 4px;cursor:pointer}
+.diary-keyring .chain{display:block;width:4px;height:36px;border-radius:3px;background:repeating-linear-gradient(#d8c5ae 0 6px,#987968 6px 10px)}
+.diary-keyring .charm{display:grid;place-items:center;width:48px;height:52px;background:#e9a4c6;border:3px solid #fff5e9;border-radius:48% 48% 45% 45%;box-shadow:2px 4px 5px #38231b55;font-size:26px}
+.diary-keyring.is-swinging{animation:keyring-tap .9s ease-in-out}
+@keyframes keyring-tap{0%,100%{transform:rotate(0)}20%{transform:rotate(22deg)}42%{transform:rotate(-18deg)}63%{transform:rotate(11deg)}82%{transform:rotate(-5deg)}}
+@media(max-width:650px){.diary-cover-book{width:calc(100vw - 85px);height:min(490px,calc(100dvh - 130px));min-height:250px}.diary-cover-label{padding:18px 9px}.diary-cover-label span{font-size:10px}.diary-keyring{left:-20px;top:55px}.diary-close-btn{top:-28px}.diary-cover-strap{right:-18px;width:60px;height:55px}}
+@media(prefers-reduced-motion:reduce){.diary-keyring.is-swinging{animation:none}.diary-cover-screen{transition:none}}
+@media(pointer:fine){
+html,body,body *,button,a,input,textarea,select,canvas,[role="button"]{
+cursor:url("./strawberry-cursor.png") 1 1,auto;
+}
+}
+
+/* V25: closed cover is one half of the open diary width, same height */
+.diary-cover-book{width:var(--closed-diary-width,540px);height:var(--closed-diary-height,620px);min-height:0;max-width:calc(100vw - 95px);max-height:calc(100dvh - 95px)}
+@media(max-width:650px){.diary-cover-book{max-width:calc(100vw - 55px)}}
+
+/* Custom cursors: default strawberry, interactive ribbon. */
+@media (pointer: fine) {
+  html, body, body * {
+    cursor: url("./cursor-strawberry-temp.png") 1 1, auto;
+  }
+  html body :is(a, button, summary, select, label[for], [role="button"], [role="link"], [onclick], input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"], .diary-keyring):not(:disabled) {
+    cursor: url("./cursor-ribbon-temp.png") 1 1, pointer;
+  }
+  /* Preserve the 3D room drag cursors. */
+  html body #room3d-stage canvas { cursor: grab !important; }
+  html body #room3d-stage canvas:active { cursor: grabbing !important; }
+}

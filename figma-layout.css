@@ -1,0 +1,320 @@
+
+/* Exact Figma 1920×1080 scene coordinates. Artwork contains its own shadows/borders. */
+:root{--figma-scale:1}
+html,body{background-color:#68483a;background-image:radial-gradient(circle,rgba(255,232,220,.19) .7px,transparent .9px);background-size:12px 12px;background-repeat:repeat;background-position:0 0}
+.wrapper{position:absolute;left:50%;top:50%;width:1920px;height:1080px;min-height:0;max-width:none;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:none;overflow:visible;isolation:isolate;transform:translate(calc(-50% + var(--figma-shrink-offset, 0px)),-50%) scale(var(--figma-scale));transform-origin:center center}
+.wrapper::before{content:'';position:absolute;inset:auto;left:265px;top:52px;width:1345px;height:949px;background:url('figma-assets/다이어리 열려있을때 뒷대지.png') 0 0/100% 100% no-repeat;border:0;box-shadow:none;z-index:0;pointer-events:none}
+.wrapper::after{content:'';position:absolute;left:1390px;top:88px;width:70px;height:98px;background:transparent url('assets/images/꾸밈 클립.png') center/contain no-repeat;border:0;border-radius:0;box-shadow:none;transform:none;clip-path:none;filter:none;z-index:8;pointer-events:none}
+.wrapper>.main{position:absolute;left:343px;top:83px;width:1225px;height:888px;min-height:0;margin:0;padding:0;display:block;background:url('figma-assets/다이어리 뒷대지.png') 0 0/1225px 888px no-repeat;border:0;border-radius:0;box-shadow:none;overflow:visible;isolation:isolate;z-index:2}
+.wrapper>.main::after{display:none}
+.wrapper>.main::before{content:'';position:absolute;left:292px;top:148px;width:49px;height:572px;background:url('figma-assets/다이어리 링.png') center/contain no-repeat;border:0;box-shadow:none;z-index:9;pointer-events:none}
+.wrapper>.main>.sidebar,.wrapper>.main>.content{position:absolute;box-sizing:border-box;margin:0;min-width:0;min-height:0;max-height:none;height:826px;overflow-y:auto;border:0;border-radius:0;box-shadow:none;background-color:transparent;z-index:4}
+.wrapper>.main>.sidebar{left:25px;top:32px;width:283px;padding:15px 13px;background:url('figma-assets/오른쪽 속지.png') center/283px 826px no-repeat}
+.wrapper>.main>.content{left:326px;top:32px;width:871px;padding:17px 18px;background:url('figma-assets/왼쪽속지.png') center/871px 826px no-repeat}
+.wrapper>.main>.menu{position:absolute;left:1197px;top:75px;width:144px;display:flex;flex-direction:column;gap:0;z-index:2;overflow:visible}
+.wrapper>.main>.menu button{width:144px;height:60px;min-height:60px;margin:0;padding:0 8px 0 30px;border:0;border-radius:0;box-shadow:none;background:url('figma-assets/선택안된 인덱스.png') center/144px 60px no-repeat;color:#fff5fa;font-size:11px}
+.wrapper>.main>.menu button.active{background:url('figma-assets/선택된 인덱스.png') right center/83px 60px no-repeat;color:#765b5c}
+.wrapper>.main>.top{position:absolute;left:371px;top:-57px;width:292px;height:79px;min-height:0;box-sizing:border-box;margin:0;padding:0;background:url('figma-assets/메모장(미니홈피 타이틀).png') 0 0/292px 79px no-repeat;border:0;border-radius:0;box-shadow:none;z-index:7;overflow:visible}
+.wrapper>.main>.top::before,.wrapper>.main>.top::after{display:none}
+.wrapper>.main>.top h1{font-size:17px;line-height:21px;padding:9px 12px 0;margin:0;white-space:nowrap;color:#806b68}
+.wrapper>.main>.top p,.wrapper>.main>.top .small{font-size:10px;line-height:13px;padding:0 12px;margin:0;color:#806b68;white-space:nowrap}
+.wrapper>.main>.top .counter{position:absolute;left:-317px;top:2px;width:210px;height:100px;min-height:0;box-sizing:border-box;margin:0;padding:52px 4px 0;display:flex;justify-content:center;align-items:flex-start;background:url('figma-assets/방문자수 클립.png') center/contain no-repeat;border:0;border-radius:0;box-shadow:none;color:#806b68;font-size:10px;line-height:16px;white-space:nowrap}
+.wrapper>.diary-keyring{position:absolute;left:56px;top:128px;width:254px;height:488px;margin:0;padding:0;background:url('figma-assets/곰돌이 키링.png') center/contain no-repeat;border:0;border-radius:0;box-shadow:none;z-index:7;transform-origin:80% 2.5%}
+.wrapper>.diary-keyring .chain,.wrapper>.diary-keyring .charm,.diary-cover-leaf>.diary-keyring .chain,.diary-cover-leaf>.diary-keyring .charm{display:none}
+.wrapper>.diary-close-btn{position:absolute;left:1583px;right:auto;top:476px;width:198px;height:102px;margin:0;padding:0;background:url('figma-assets/다이어리 열린 상태일떄 잠금장치.png') center/contain no-repeat;border:0;border-radius:0;box-shadow:none;color:transparent;z-index:1}
+.wrapper>.footer{display:none}
+.diary-cover-screen{background:transparent;background-image:none;padding:0;overflow:hidden}
+.diary-cover-book{position:absolute;left:calc(50% - 375px * var(--figma-scale));top:calc(50% - 483px * var(--figma-scale));width:708px;height:972px;min-width:0;min-height:0;max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent;transform:scale(var(--figma-scale));transform-origin:top left}
+.diary-cover-book::before,.diary-cover-book::after,.diary-cover-leaf::before{display:none}
+.diary-cover-leaf{position:absolute;inset:0;background:url('figma-assets/다이어리 표지.png') center/708px 972px no-repeat;border:0;border-radius:0;box-shadow:none}
+.diary-cover-label,.diary-cover-hint{display:none}
+.diary-cover-book .diary-cover-strap{position:absolute;left:466px;right:auto;top:413px;width:243px;height:124px;margin:0;padding:0;background:url('figma-assets/다이어리 잠금장치 닫혔을때.png') center/contain no-repeat;border:0;border-radius:0;box-shadow:none;color:transparent;z-index:5}
+.diary-cover-book .diary-cover-strap::before,.diary-cover-book .diary-cover-strap::after{display:none}
+.diary-cover-screen.is-opening .diary-cover-book .diary-cover-strap{left:670.2px;background-image:url('figma-assets/다이어리 잠금장치 열릴때.png')}
+.diary-cover-leaf>.diary-keyring{position:absolute;left:-195px;top:60px;width:254px;height:488px;background:url('figma-assets/곰돌이 키링.png') center/contain no-repeat;border:0;box-shadow:none;transform-origin:80% 2.5%}
+.wrapper>.diary-keyring.is-swinging,.diary-cover-leaf>.diary-keyring.is-swinging{animation:keyring-tap .9s ease-in-out}
+
+/* 2026-11-12: layer/order and inner-page refinements; keep supplied PNG art untouched. */
+/* The page image is stationary; only the text/content layer scrolls inside it. */
+.wrapper>.main::after{
+  display:block;content:"";position:absolute;
+  left:326px;top:32px;width:871px;height:826px;
+  background:url('figma-assets/왼쪽속지.png') 0 0/871px 826px no-repeat;
+  border:0;box-shadow:none;pointer-events:none;z-index:3;
+}
+.wrapper>.main>.content{
+  left:343px;top:46px;width:832px;height:795px;
+  padding:9px 19px 22px 4px;background:none;
+  overflow-x:hidden;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:#dca5bf transparent;
+  scrollbar-gutter:stable;
+}
+.wrapper>.main>.content::-webkit-scrollbar{width:7px}
+.wrapper>.main>.content::-webkit-scrollbar-track{background:transparent;margin:13px 0 17px}
+.wrapper>.main>.content::-webkit-scrollbar-thumb{background:#e6aec8;border-radius:20px;border:1px solid #f9e7f1}
+.wrapper>.main>.content::-webkit-scrollbar-thumb:hover{background:#cf8eae}
+/* Tabs share one back layer: no alternating foreground/background order. */
+.wrapper>.main>.menu{
+  left:1162px;top:75px;width:165px;
+  z-index:1;gap:0;
+}
+.wrapper>.main>.menu button{
+  width:165px;height:69px;min-height:69px;
+  background:url('figma-assets/선택안된 인덱스.png') 0 0/165px 69px no-repeat;
+  padding:0 10px 0 38px;
+}
+.wrapper>.main>.menu button.active{
+  background:url('figma-assets/선택된 인덱스.png') right center/96px 69px no-repeat;
+}
+/* Title text belongs to the blue memo, not the inherited grid layout. */
+.wrapper>.main>.top{display:block;overflow:visible}
+.wrapper>.main>.top h1,.wrapper>.main>.top p,.wrapper>.main>.top .small{
+  position:relative;inset:auto;float:none;display:block;
+  width:auto;max-width:260px;min-width:0;
+  height:auto;transform:none;text-align:left;
+  grid-area:auto;overflow:hidden;text-overflow:ellipsis;
+  box-sizing:border-box;letter-spacing:normal;
+}
+.wrapper>.main>.top h1{padding:11px 13px 0;font-size:16px;line-height:21px}
+.wrapper>.main>.top p{padding:0 13px;font-size:10px;line-height:13px}
+.wrapper>.main>.top .small{padding:0 13px;font-size:10px;line-height:13px}
+/* Paper shadows and borders come exclusively from the original PNGs. */
+
+/* Cover correction: keep the original single PNG opaque and undistorted. */
+.diary-cover-screen{
+  background-color:#68483a;
+  background-image:radial-gradient(circle,rgba(255,232,220,.19) .7px,transparent .9px);
+  background-size:12px 12px;
+  background-repeat:repeat;
+}
+.diary-cover-book,.diary-cover-leaf{perspective:none;transform-style:flat}
+.diary-cover-leaf{
+  inset:0;width:708px;height:972px;
+  background-size:708px 972px;
+  transform:none;animation:none;
+  border:0;border-radius:0;box-shadow:none;
+}
+/* Animate the supplied clasp art rather than rotating or duplicating the cover. */
+.diary-cover-screen.is-opening .diary-cover-leaf,
+.diary-cover-screen.is-closing .diary-cover-leaf{animation:none;transform:none}
+.diary-cover-screen.is-opening .diary-cover-strap,
+.diary-cover-screen.is-closing .diary-cover-strap{animation:none;transform:none}
+.diary-cover-screen.is-opening .diary-cover-strap{
+  background-image:url('figma-assets/다이어리 잠금장치 열릴때.png');
+}
+/* The visitor clip PNG is already 210x100; readable type must sit within its label. */
+.wrapper>.main>.top .counter{
+  font-size:15px;font-weight:700;line-height:18px;
+  padding:50px 3px 0;gap:4px;
+  letter-spacing:-.35px;
+}
+.wrapper>.main>.top .counter span{font-size:15px;font-weight:800;line-height:18px}
+
+/* Figma index coordinates: first tab (selected) 1540,158; subsequent slots 1479,221 +63px. */
+.wrapper>.main>.menu{
+  left:1136px;top:75px;width:205px;height:438px;
+  display:block;position:absolute;z-index:1;
+}
+.wrapper>.main>.menu button{
+  position:absolute;left:0;width:144px;height:60px;
+  min-height:60px;margin:0;padding:0 9px 0 25px;
+  background:url('figma-assets/선택안된 인덱스.png') 0 0/144px 60px no-repeat;
+}
+.wrapper>.main>.menu button:nth-child(1){top:0}
+.wrapper>.main>.menu button:nth-child(2){top:63px}
+.wrapper>.main>.menu button:nth-child(3){top:126px}
+.wrapper>.main>.menu button:nth-child(4){top:189px}
+.wrapper>.main>.menu button:nth-child(5){top:252px}
+.wrapper>.main>.menu button:nth-child(6){top:315px}
+.wrapper>.main>.menu button:nth-child(7){top:378px}
+.wrapper>.main>.menu button.active{
+  left:61px;width:83px;height:60px;min-height:60px;
+  padding:0 5px;background:url('figma-assets/선택된 인덱스.png') 0 0/83px 60px no-repeat;
+}
+
+/* Keep all index labels aligned to the same visible right edge.
+   The unselected PNG extends 61px further left; its label must not. */
+.wrapper>.main>.menu button{
+  box-sizing:border-box;
+  text-align:right;
+  padding:0 10px 0 65px;
+  white-space:nowrap;
+  overflow:visible;
+  display:block;
+  line-height:60px;
+  font-size:10px;
+  letter-spacing:-.3px;
+}
+.wrapper>.main>.menu button.active{
+  text-align:right;
+  padding:0 10px 0 0;
+  line-height:60px;
+  font-size:10px;
+}
+
+/* Targeted placement adjustment: keep the original PNGs and all other layers intact. */
+.wrapper>.main>.top{
+  top:-36px; /* global y=47: between brown backing and pink paper */
+}
+.wrapper>.main>.top .counter{
+  padding-top:64px; /* lower TODAY/TOTAL text by 12px inside the existing clip */
+}
+
+/* 2026-11-12: exact layer order, no changes to original art or page geometry. */
+/* The blue note slips behind the sheet; its text remains on the note. */
+.wrapper>.main>.top{z-index:2}
+/* The hanging charm is behind the diary backing, not pasted over the paper. */
+.wrapper>.diary-keyring{z-index:1}
+/* Visitor clip is a separate sibling so the note's z-index cannot bury it. */
+.wrapper>.figma-visitor-counter{
+  position:absolute;left:397px;top:28px;
+  width:210px;height:100px;
+  box-sizing:border-box;margin:0;padding:0;
+  background:url('figma-assets/방문자수 클립.png') center/contain no-repeat;
+  border:0;border-radius:0;box-shadow:none;
+  z-index:7;display:block;overflow:visible;
+  color:#806b68;font-size:15px;font-weight:700;
+}
+.wrapper>.figma-visitor-counter .counter-labels{
+  position:absolute;top:66px;left:0;right:0;
+  display:block;text-align:center;white-space:nowrap;
+  font-size:15px;font-weight:700;line-height:18px;
+  letter-spacing:-.35px;
+}
+.wrapper>.figma-visitor-counter .counter-labels span{font-size:15px;font-weight:800}
+/* Closed scene: charm must sit behind the cover artwork, using the same anchor. */
+.diary-cover-book>.diary-keyring{
+  position:absolute;left:-195px;top:60px;
+  width:254px;height:488px;
+  background:url('figma-assets/곰돌이 키링.png') center/contain no-repeat;
+  border:0;box-shadow:none;z-index:0;
+  transform-origin:80% 2.5%;
+}
+.diary-cover-book>.diary-keyring .chain,.diary-cover-book>.diary-keyring .charm{display:none}
+.diary-cover-book>.diary-keyring.is-swinging{animation:keyring-tap .9s ease-in-out}
+.diary-cover-book>.diary-cover-leaf{z-index:1}
+.diary-cover-book>.diary-cover-strap{z-index:5}
+
+/* Final Figma refinements: preserve PNG geometry and avoid hover CSS replacements. */
+.wrapper>.main>.menu button,
+.wrapper>.main>.menu button:hover,
+.wrapper>.main>.menu button:focus-visible,
+.wrapper>.main>.menu button:not(.active):hover,
+.wrapper>.main>.menu button:not(.active):focus-visible,
+.wrapper>.main>.menu button.active,
+.wrapper>.main>.menu button.active:hover,
+.wrapper>.main>.menu button.active:focus-visible{
+  transform:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  background-color:transparent;
+  transition:none;
+  position:absolute;
+  z-index:1;
+  margin:0;
+  box-sizing:border-box;
+  width:144px;
+  height:60px;
+  min-height:60px;
+  padding:0 10px 0 65px;
+  display:block;
+  text-align:right;
+  line-height:60px;
+  font-size:11px;
+  white-space:nowrap;
+  background-image:url('figma-assets/선택안된 인덱스.png');
+  background-size:144px 60px;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  color:#fff5fa;
+}
+.wrapper>.main>.menu button.active,
+.wrapper>.main>.menu button.active:hover,
+.wrapper>.main>.menu button.active:focus-visible{
+  left:61px;
+  width:83px;
+  padding:0 10px 0 0;
+  background-image:url('figma-assets/선택된 인덱스.png');
+  background-size:83px 60px;
+  color:#765b5c;
+}
+/* Increase readability without changing paper dimensions. */
+.wrapper>.main>.sidebar{font-size:14px;line-height:1.65}
+.wrapper>.main>.sidebar .profile-info h3{font-size:19px}
+.wrapper>.main>.sidebar .profile-english-name{font-size:13px}
+.wrapper>.main>.sidebar .profile-job{font-size:14px;line-height:1.6}
+.wrapper>.main>.sidebar .profile-intro{font-size:14px;line-height:1.7}
+.wrapper>.main>.sidebar .profile-link{font-size:13.5px;line-height:1.5}
+.wrapper>.main>.sidebar .profile-link span{font-size:15px}
+.wrapper>.main>.sidebar .profile-more{font-size:13px}
+.wrapper>.main>.sidebar .profile-heading{font-size:14px}
+.wrapper>.main>.content{font-size:14px}
+
+/* Refinements: preserve original Figma artwork and index dimensions. */
+/* Charm sits behind the pink diary backing in the open scene. */
+.wrapper>.diary-keyring { z-index:-1; }
+
+/* Restore a subtle inward hover without changing image dimensions or text alignment. */
+.wrapper>.main>.menu button {
+  transition:transform .18s ease, filter .18s ease;
+}
+.wrapper>.main>.menu button:not(.active):hover,
+.wrapper>.main>.menu button:not(.active):focus-visible {
+  transform:translateX(-7px);
+  filter:brightness(1.13) saturate(1.18);
+}
+
+/* Three tools per row in the PROFILE content area. */
+.wrapper>.main>.content .profile-tool-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+/* Active index must never shift or recolor, including on focus and click. */
+.wrapper>.main>.menu button.active,
+.wrapper>.main>.menu button.active:hover,
+.wrapper>.main>.menu button.active:focus-visible,
+.wrapper>.main>.menu button.active:active {
+  transform:none;
+  filter:none;
+  transition:none;
+  background-image:url('figma-assets/선택된 인덱스.png');
+  background-color:transparent;
+}
+/* The open diary clasp is a supplied PNG, not a CSS-drawn button. */
+.wrapper>.diary-close-btn,
+.wrapper>.diary-close-btn:hover,
+.wrapper>.diary-close-btn:focus-visible,
+.wrapper>.diary-close-btn:active {
+  left:1583px;
+  right:auto;
+  top:476px;
+  width:198px;
+  height:102px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent url('figma-assets/다이어리 열린 상태일떄 잠금장치.png') center / 198px 102px no-repeat;
+  box-shadow:none;
+  color:transparent;
+  font-size:0;
+  transform:none;
+  filter:none;
+  opacity:1;
+}
+
+/* Cover oval title: HTML overlay, preserving supplied cover PNG. */
+.diary-cover-leaf .diary-cover-label{
+  display:flex;position:absolute;left:165px;top:114px;width:410px;height:178px;
+  flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:transparent;border:0;box-shadow:none;pointer-events:none;z-index:2;
+  text-align:center;transform:none;margin:0;padding:0;
+}
+.diary-cover-leaf .diary-cover-label strong{
+  display:block;color:#806b68;font-size:30px;line-height:1.2;letter-spacing:1px;
+  font-weight:800;text-shadow:none;white-space:nowrap;
+}
+.diary-cover-leaf .diary-cover-label span{
+  display:block;color:#9b7b84;font-size:13px;line-height:1.3;letter-spacing:1.8px;
+  font-weight:600;white-space:nowrap;
+}

@@ -1,0 +1,263 @@
+/* Frame 2 (21:94–21:110): physical MP3 shell + joined video/pink playlist screen. */
+.bgm-panel:not(.is-collapsed){
+  width:256px;height:490px;max-height:min(490px,calc(100dvh - 16px));
+  padding:9px 13px 8px;border:2px solid #c6c4cd;border-radius:25px;
+  background:linear-gradient(146deg,#fbfbfb 4%,#eae9ee 43%,#dad9df 98%);
+  box-shadow:inset 5px 4px 2px #fff,inset -3px -3px 5px #b8b5bf88,3px 7px 15px #604e6340;
+  color:#806767;
+}
+.bgm-panel:not(.is-collapsed) .bgm-top{height:27px;min-height:27px;padding:0 3px 5px}
+.bgm-panel:not(.is-collapsed) .bgm-body{padding:0;gap:0;display:flex;flex-direction:column;min-height:0}
+.bgm-panel:not(.is-collapsed) .bgm-screen{
+  display:flex;flex-direction:column;flex:1 1 auto;min-height:0;overflow:hidden;
+  margin:0 3px 5px;border:9px solid #3c3a43;border-radius:3px;
+  background:#ebe0ea;box-shadow:0 1px 2px #fff,inset 0 2px 4px #756875;
+}
+.bgm-panel:not(.is-collapsed) .bgm-video{
+  display:block!important;flex:0 0 175px;width:100%;min-width:0;max-width:none;
+  height:175px;min-height:0;align-self:stretch;margin:0;padding:0;
+  border:0;outline:0;border-radius:0;box-shadow:none;background:#808080;overflow:hidden;
+}
+.bgm-panel:not(.is-collapsed) .bgm-video iframe{height:100%;min-height:0;width:100%;border:0}
+.bgm-panel:not(.is-collapsed) .bgm-pink-screen{
+  display:flex;flex-direction:column;flex:1 1 auto;min-height:0;
+  background:linear-gradient(155deg,#f7e9f2,#ebe0ea);border-top:1px solid #c4aebf;
+}
+.bgm-panel:not(.is-collapsed) .bgm-nowplaying{padding:4px 7px 3px;flex:0 0 auto;border-bottom:1px solid #d7c3d1;min-width:0}
+.bgm-panel:not(.is-collapsed) .bgm-mini-label{display:block;margin:0;color:#94758b;font-size:8px;line-height:1.2}
+.bgm-panel:not(.is-collapsed) .bgm-title{display:block;margin:1px 0 0;min-width:0;width:100%;font-size:11px;line-height:1.35;color:#6f5369;white-space:nowrap;overflow:hidden}
+.bgm-panel:not(.is-collapsed) .bgm-source{display:block;margin:0;font-size:8px;line-height:1.2;color:#a18b9b}
+.bgm-panel:not(.is-collapsed) .bgm-playlist{
+  flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  margin:0;padding:1px 3px;border:0;outline:0;border-radius:0;
+  background:transparent;box-shadow:none;scrollbar-width:thin;scrollbar-color:#d0a8be #f4e6f0;
+}
+.bgm-panel:not(.is-collapsed) .bgm-track{font-size:9px;line-height:1.25;min-height:23px;padding:4px 3px;border-bottom:1px solid #dcc9d6;color:#71596d}
+.bgm-panel:not(.is-collapsed) .bgm-track.is-current{background:#e7c4d8;color:#62475d}
+.bgm-panel:not(.is-collapsed) .bgm-wheel{
+  position:relative;flex:0 0 156px;width:156px;height:156px;margin:2px auto 0;
+  border:2px solid #c4c1ca;border-radius:50%;
+  background:linear-gradient(150deg,#fefeff,#e0dfe6 65%,#cac9d1);
+  box-shadow:inset 4px 4px 5px #fff,inset -4px -5px 7px #b2afb9,1px 3px 5px #8a7b8c55;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls{
+  position:absolute;inset:0;display:block;width:auto;height:auto;margin:0;padding:0;
+  background:none;border:0;border-radius:0;box-shadow:none;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-btn{
+  position:absolute;top:50%;transform:translateY(-50%);width:38px;height:36px;
+  padding:0;border:0;border-radius:50%;background:transparent;box-shadow:none;
+  color:#806767;font-size:12px;cursor:pointer;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls [data-prev]{left:4px}
+.bgm-panel:not(.is-collapsed) .bgm-controls [data-next]{right:4px}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play{
+  left:50%;top:50%;transform:translate(-50%,-50%);width:70px;height:70px;
+  border:1px solid #c5bfc9;border-radius:50%;font-size:24px;
+  background:linear-gradient(140deg,#fefeff,#d7d5dd);
+  box-shadow:inset 2px 2px 3px #fff,inset -2px -2px 4px #b9b5bf,0 1px 3px #b7a9b8;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-btn:hover{color:#a45d88}
+.bgm-panel:not(.is-collapsed) .bgm-wheel-volume{
+  position:absolute;z-index:2;left:50%;top:7px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  width:78px;margin:0;color:#806767;font-size:8px;line-height:1;
+}
+.bgm-panel:not(.is-collapsed) .bgm-wheel-volume input{width:70px;height:12px;margin:0;accent-color:#bd8da9;cursor:pointer}
+.bgm-panel:not(.is-collapsed) .bgm-note{
+  flex:0 0 auto;margin:2px 2px 0;min-height:11px;max-height:14px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;font-size:8px;color:#957c90;
+}
+@media(max-height:560px){
+ .bgm-panel:not(.is-collapsed){height:min(490px,calc(100dvh - 12px))}
+ .bgm-panel:not(.is-collapsed) .bgm-video{flex-basis:130px;height:130px}
+ .bgm-panel:not(.is-collapsed) .bgm-wheel{flex-basis:125px;width:125px;height:125px}
+ .bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play{width:57px;height:57px}
+ .bgm-panel:not(.is-collapsed) .bgm-controls .bgm-btn{width:30px}
+}
+@media(max-width:650px){.bgm-panel:not(.is-collapsed){width:min(256px,calc(100vw - 18px))}}
+
+/* Frame 2 proportional size: 256px MP3 beside a 1301px diary.
+   Keep both modes at identical physical width (256 × .78 = 199.68px).
+   zoom scales the layout itself, not just the painting box, avoiding
+   the oversized click region and different collapsed/expanded widths. */
+.bgm-panel,
+.bgm-panel.is-collapsed,
+.bgm-panel:not(.is-collapsed) {
+  width:256px;
+  min-width:256px;
+  max-width:256px;
+  zoom:.78;
+  transform:none;
+}
+@media (max-width:650px) {
+  .bgm-panel, .bgm-panel.is-collapsed, .bgm-panel:not(.is-collapsed) {
+    width:256px; min-width:256px; max-width:256px;
+  }
+}
+
+/* Frame 2 refinement: larger playlist, recessed click-wheel, triangular volume. */
+.bgm-panel:not(.is-collapsed){
+  /* Metallic body continues under the wheel: no separate white backing. */
+  background:linear-gradient(146deg,#fbfbfb 3%,#e8e7ec 35%,#dedde4 67%,#d1cfd8 100%);
+}
+.bgm-panel:not(.is-collapsed) .bgm-body{padding-bottom:0}
+.bgm-panel:not(.is-collapsed) .bgm-screen{margin-bottom:5px;flex:1 1 auto}
+.bgm-panel:not(.is-collapsed) .bgm-video{
+  flex:0 0 142px;height:142px;
+}
+.bgm-panel:not(.is-collapsed) .bgm-pink-screen{min-height:96px}
+.bgm-panel:not(.is-collapsed) .bgm-nowplaying{padding:4px 6px 4px}
+.bgm-panel:not(.is-collapsed) .bgm-playlist{min-height:60px}
+.bgm-panel:not(.is-collapsed) .bgm-track{min-height:24px;padding:5px 4px}
+/* The page header already shows playback status; keep internal nodes for JS/errors. */
+.bgm-panel:not(.is-collapsed) .bgm-note,
+.bgm-panel:not(.is-collapsed) .bgm-source{display:none!important}
+/* The wheel is carved into the device rather than mounted on top. */
+.bgm-panel:not(.is-collapsed) .bgm-wheel{
+  flex:0 0 146px;width:146px;height:146px;margin:1px auto 3px;
+  border:2px solid #b9b6c1;
+  background:linear-gradient(145deg,#dad9e0,#eeedf1 47%,#d6d4dd);
+  box-shadow:inset 4px 5px 9px #a6a3b0,inset -3px -4px 7px #ffffffd9,0 1px 1px #fff9;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play{
+  width:66px;height:66px;
+  border:1px solid #b9b4c0;
+  background:linear-gradient(150deg,#dad8e0,#f0eff2 72%);
+  box-shadow:inset 3px 4px 7px #b6b2bf,inset -2px -3px 5px #fff,0 1px 0 #fefefe;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play:active{
+  box-shadow:inset 4px 5px 9px #9d98a8,inset -1px -2px 3px #eee;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-btn:not(.bgm-play):active{background:#bdb7c44d}
+.bgm-panel:not(.is-collapsed) .bgm-wheel-volume{
+  position:absolute;inset:0;z-index:3;transform:none;
+  display:block;width:auto;height:auto;pointer-events:none;
+}
+.bgm-panel:not(.is-collapsed) .bgm-wheel-volume input{
+  position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;
+}
+.bgm-panel:not(.is-collapsed) .bgm-volume-step{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  width:40px;height:27px;padding:0;border:0;border-radius:10px;
+  color:#806767;background:transparent;box-shadow:none;
+  font-size:12px;line-height:1;cursor:pointer;pointer-events:auto;
+}
+.bgm-panel:not(.is-collapsed) .bgm-volume-step span{font-size:7px;line-height:1}
+.bgm-panel:not(.is-collapsed) .bgm-volume-up{top:4px}
+.bgm-panel:not(.is-collapsed) .bgm-volume-down{bottom:4px}
+.bgm-panel:not(.is-collapsed) .bgm-volume-step:hover{color:#ae7196;background:#ffffff3d}
+.bgm-panel:not(.is-collapsed) .bgm-volume-step:active{background:#afa9b84d}
+.bgm-panel:not(.is-collapsed) .bgm-volume-step:focus-visible{outline:2px solid #a45d88;outline-offset:1px}
+@media(max-height:560px){
+ .bgm-panel:not(.is-collapsed) .bgm-video{flex-basis:112px;height:112px}
+ .bgm-panel:not(.is-collapsed) .bgm-wheel{flex-basis:125px;width:125px;height:125px}
+}
+
+/* Gentle iPod-like wheel and unified metallic shell — refinement 3. */
+.bgm-panel:not(.is-collapsed){
+  background:linear-gradient(150deg,#f6f5f8 0%,#e8e7ed 28%,#e0dfe7 61%,#d6d5df 100%);
+}
+/* Remove the separate rectangular backing behind the LCD and click wheel. */
+.bgm-panel:not(.is-collapsed) .bgm-body{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+}
+.bgm-panel:not(.is-collapsed) .bgm-video{
+  flex-basis:154px;height:154px;
+}
+.bgm-panel:not(.is-collapsed) .bgm-wheel{
+  flex:0 0 140px;width:140px;height:140px;
+  margin:1px auto 3px;
+  border:1px solid #c5c3cd;
+  background:radial-gradient(ellipse at 50% 48%,#f0eff4 0%,#eae9f0 57%,#e0dfe8 81%,#d4d2dc 100%);
+  box-shadow:inset 0 0 5px 1px #aaa7b47a,inset 0 0 13px 3px #b7b4c35c,0 0 0 1px #ffffff70;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play{
+  width:66px;height:66px;
+  border:1px solid #cbc8d2;
+  background:radial-gradient(circle at center,#f3f2f6 0%,#eeedf3 55%,#e0dfe8 100%);
+  box-shadow:inset 0 0 5px 1px #a9a6b477,inset 0 0 11px 2px #bbb8c66b,0 0 0 1px #fff8;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play:active{
+  box-shadow:inset 0 0 8px 2px #aaa6b6,inset 0 0 14px 3px #c1bdcb;
+}
+@media(max-height:560px){
+  .bgm-panel:not(.is-collapsed) .bgm-video{flex-basis:124px;height:124px}
+  .bgm-panel:not(.is-collapsed) .bgm-wheel{flex-basis:125px;width:125px;height:125px}
+}
+
+/* Fine sizing: increase both modes equally (~5%) without changing functionality. */
+.bgm-panel,
+.bgm-panel.is-collapsed,
+.bgm-panel:not(.is-collapsed){
+  width:256px;
+  min-width:256px;
+  max-width:256px;
+  zoom:.82;
+  border-radius:25px;
+  box-sizing:border-box;
+}
+/* Match the exact shell silhouette between the closed and open player. */
+.bgm-panel.is-collapsed{
+  border-radius:25px;
+}
+@media(max-width:650px){
+  .bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){
+    width:256px;min-width:256px;max-width:256px;zoom:.82;border-radius:25px;
+  }
+}
+
+/* 240px Figma-width MP3 and independently clickable earphones. */
+.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){zoom:.9375}
+@media(max-width:1599px){.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){zoom:.82}}
+@media(max-width:1099px){.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){zoom:.72}}
+.mp3-earphones{position:fixed;z-index:9998;top:0;left:0;width:240px;height:600px;pointer-events:none;transform-origin:top left;overflow:visible}
+.mp3-earphones.front{z-index:10000}
+.mp3-earphones .part{position:absolute;display:block;transform-origin:50% 0;pointer-events:none}
+.mp3-earphones .part img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.mp3-earphones button.part{border:0;background:none;padding:0;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+.mp3-earphones button.part:focus-visible{outline:2px dashed #bb8aa6;border-radius:8px}
+.mp3-earphones .part.swing{animation:mp3-ear-swing 1.6s ease-out}
+@keyframes mp3-ear-swing{0%,100%{transform:rotate(0)}13%{transform:rotate(14deg)}30%{transform:rotate(-11deg)}47%{transform:rotate(7deg)}65%{transform:rotate(-4deg)}83%{transform:rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){.mp3-earphones .part.swing{animation-duration:.01ms}}
+
+/* MP3/earphones: reduced size and more breathing room. */
+.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){left:auto;right:40px;top:44px;bottom:auto;zoom:.82}
+@media(max-width:1599px){.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:32px;top:38px;zoom:.74}}
+@media(max-width:1099px){.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:24px;top:30px;zoom:.67}}
+@media(max-width:650px){.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:18px;top:25px;zoom:.62}}
+
+/* Open mode only: move the whole player up/left; closed mode is unchanged. */
+.bgm-panel:not(.is-collapsed){right:74px;top:24px}
+@media(max-width:1599px){.bgm-panel:not(.is-collapsed){right:66px;top:18px}}
+@media(max-width:1099px){.bgm-panel:not(.is-collapsed){right:58px;top:15px}}
+@media(max-width:650px){.bgm-panel:not(.is-collapsed){right:52px;top:12px}}
+/* Smaller sway on open/close, independent of the stronger click animation. */
+.mp3-earphones .part.fold-sway{animation:mp3-ear-fold-sway 1.3s ease-out both}
+@keyframes mp3-ear-fold-sway{
+  0%{transform:rotate(0deg)}
+  20%{transform:rotate(6deg)}
+  42%{transform:rotate(-4deg)}
+  65%{transform:rotate(2deg)}
+  100%{transform:rotate(0deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .mp3-earphones .part.fold-sway{animation-duration:.01ms;animation-delay:0ms!important}
+}
+
+/* Identical shell anchor in both modes; expanding grows downward. */
+.bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:40px;top:44px;left:auto;bottom:auto;zoom:.82}
+@media(max-width:1599px){
+ .bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:32px;top:38px;zoom:.74}
+}
+@media(max-width:1099px){
+ .bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:24px;top:30px;zoom:.67}
+}
+@media(max-width:650px){
+ .bgm-panel,.bgm-panel.is-collapsed,.bgm-panel:not(.is-collapsed){right:18px;top:25px;zoom:.62}
+}
+@media(max-width:760px){.bgm-panel [data-fold]{display:none!important}}

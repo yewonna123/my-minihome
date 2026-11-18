@@ -1,0 +1,24 @@
+/* GUESTBOOK: isolated styles, palette can be changed later */
+.guestbook-page{color:#80677b;min-width:0}
+.guestbook-page *{box-sizing:border-box}
+.guestbook-intro{text-align:center;background:#fff5fb;border:1px solid #ecd9e6;padding:24px 14px;margin:14px 0 18px}
+.guestbook-intro span{font-size:10px;letter-spacing:2px;color:#b78eab}
+.guestbook-intro h2{font-size:20px;color:#a57399;margin:7px 0}
+.guestbook-intro p{font-size:13px;margin:0;color:#967f90}
+.guestbook-form{border:1px solid #ead8e4;background:#fffdfd;padding:18px;margin-bottom:22px}
+.guestbook-form label{display:flex;justify-content:space-between;font-size:12px;font-weight:bold;letter-spacing:1px;color:#a47796}
+.guestbook-form label span{font-weight:normal;color:#b7a4b1}
+.guestbook-form textarea{display:block;width:100%;resize:vertical;min-height:100px;border:1px solid #e9d8e3;border-radius:4px;background:#fff;padding:12px;font:inherit;font-size:14px;line-height:1.6;color:#765d70;margin:9px 0 12px;outline-offset:2px}
+.guestbook-form-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.guestbook-form-bottom>span{font-size:12px;color:#aa90a2}
+.guestbook-submit{border:0;background:#d49fc1;color:white;border-radius:4px;padding:10px 17px;cursor:pointer;font:inherit;font-size:13px}
+.guestbook-submit:hover{background:#bc83a8}
+.guestbook-heading{display:flex;justify-content:space-between;align-items:center;border-bottom:1px dashed #dec5d5;padding-bottom:10px;margin-bottom:12px;font-size:12px;letter-spacing:1px;color:#a07795}
+.guestbook-heading span{font-size:11px;letter-spacing:0}
+.guestbook-card{border:1px solid #eadce6;background:#fff;padding:15px 17px;margin-bottom:10px;overflow-wrap:anywhere}
+.guestbook-card-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px}
+.guestbook-card-head strong{color:#a06e91}
+.guestbook-card-head time{color:#b5a0b0;font-size:11px}
+.guestbook-card p{white-space:pre-wrap;word-break:break-word;line-height:1.8;font-size:14px;margin:10px 0 0}
+.guestbook-empty{text-align:center;color:#aa91a3;border:1px dashed #e8d7e2;padding:26px 12px;font-size:13px}
+.guestbook-note{font-size:11px;color:#b09aaa;line-height:1.7;margin:14px 0}

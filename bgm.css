@@ -1,0 +1,112 @@
+
+/* Cyworld-inspired BGM side widget. Does not affect existing arcade/portfolio. */
+.bgm-panel{position:fixed;z-index:9999;top:122px;left:calc(50% + 512px);width:226px;color:#6f5d70;font:12px 'Gowun Dodum',sans-serif;background:#fffdfd;border:1px solid #d8c5d6;border-radius:0 11px 11px 0;box-shadow:3px 5px 12px #6b4a6b22;overflow:hidden}
+.bgm-panel *{box-sizing:border-box}
+.bgm-top{display:flex;justify-content:space-between;align-items:center;background:#e7d6e8;border-bottom:1px solid #d6c1d4;padding:9px 11px;letter-spacing:.7px}
+.bgm-top strong{color:#805f7c;font-size:12px}
+.bgm-btn{background:#fff;border:1px solid #d9c5d6;border-radius:4px;color:#8c6e88;padding:5px 8px;cursor:pointer;font:inherit}
+.bgm-btn:hover{background:#faeaf5}
+.bgm-body{padding:12px}
+.bgm-mini-label{color:#b38aa9;font-size:10px;letter-spacing:1.2px}
+.bgm-title{font-weight:bold;color:#785a75;font-size:13px;margin:5px 0 2px}
+.bgm-source{color:#ac94a6;font-size:11px;margin-bottom:10px}
+.bgm-controls{display:flex;align-items:center;gap:6px}
+.bgm-controls .bgm-btn{flex:0 0 auto}
+.bgm-play{flex:1;background:#f8e9f4}
+.bgm-volume{display:flex;align-items:center;gap:7px;margin:11px 0}
+.bgm-volume input{width:100%;accent-color:#c493b8}
+.bgm-playlist{border-top:1px dashed #e5d5e2;padding-top:9px;margin-top:7px}
+.bgm-track{display:flex;align-items:center;gap:7px;width:100%;padding:7px 5px;border:0;border-bottom:1px solid #f1e8ef;background:transparent;text-align:left;font:inherit;color:#806d7c;cursor:pointer}
+.bgm-track.is-current{color:#ae6c9a;background:#fbf1f8;font-weight:bold}
+.bgm-track span:first-child{font-size:10px;color:#bd9fb7}
+.bgm-video-label{font-size:10px;color:#a58ca0;margin:11px 0 5px}
+.bgm-video{width:100%;aspect-ratio:16/9;background:#26202a;overflow:hidden}
+.bgm-video iframe{width:100%;height:100%;border:0}
+.bgm-note{font-size:10px;line-height:1.5;color:#ab96a7;margin:7px 0 0}
+.bgm-panel.is-collapsed .bgm-body{display:none}
+@media(max-width:1480px){.bgm-panel{left:auto;right:12px;top:auto;bottom:12px;border-radius:10px;width:226px}}
+@media(max-width:650px){.bgm-panel{right:9px;bottom:9px;width:min(226px,calc(100vw - 18px));max-height:75vh;overflow:auto}}
+
+/* V26: YouTube embedded player minimum recommended 200x200 */
+.bgm-video{aspect-ratio:auto;height:200px;min-height:200px}
+.bgm-video iframe{min-height:200px}
+
+/* V29: compact fixed-size MP3-style player; only track list scrolls */
+.bgm-panel{height:530px;max-height:min(530px,calc(100dvh - 24px));display:flex;flex-direction:column;overflow:hidden}
+.bgm-top{flex:0 0 auto}
+.bgm-body{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden;padding:10px 12px}
+.bgm-video-label{flex:0 0 auto;margin:0 0 5px}
+.bgm-video{flex:0 0 200px;height:200px;min-height:200px;margin-bottom:10px}
+.bgm-mini-label,.bgm-title,.bgm-source,.bgm-controls,.bgm-volume,.bgm-note{flex:0 0 auto}
+.bgm-title{margin:3px 0 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bgm-source{margin-bottom:8px}
+.bgm-volume{margin:9px 0}
+.bgm-playlist{flex:1 1 auto;min-height:48px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#d49dbb #fff5fa;padding-top:4px;margin-top:0}
+.bgm-track{padding:5px 4px;min-height:28px}
+.bgm-note{margin:7px 0 0;min-height:27px;max-height:42px;overflow-y:auto}
+.bgm-panel.is-collapsed{height:auto;max-height:none}
+.bgm-panel.is-collapsed .bgm-body{display:none}
+@media(max-width:650px){.bgm-panel{max-height:min(530px,calc(100dvh - 20px))}}
+
+/* V30: closed player as a tiny retro MP3 with LCD and hardware keys */
+.bgm-pocket{display:none}
+.bgm-panel.is-collapsed{width:226px;height:136px;max-height:none;border:3px solid #6f7175;border-radius:34px 39px 30px 32px;background:linear-gradient(150deg,#e4e8e6 0%,#949c9d 16%,#363c40 23%,#30383a 78%,#a3acab 95%,#dce2e0 100%);box-shadow:inset 0 2px 4px #fff9,inset 0 -4px 8px #12191a99,4px 8px 14px #271b2345;color:#e9f3f4;padding:7px 9px 9px}
+.bgm-panel.is-collapsed .bgm-top{padding:0 3px 3px;border:0;background:transparent;min-height:23px}
+.bgm-panel.is-collapsed .bgm-top strong{color:#9d7890;font-size:9px;letter-spacing:1.2px}
+.bgm-panel.is-collapsed .bgm-top .bgm-btn{border:1px solid #abb2b0;border-radius:50%;background:linear-gradient(#f7f9f8,#8f9898);color:#30383a;font-size:13px;width:24px;height:24px;padding:0;line-height:1}
+.bgm-panel.is-collapsed .bgm-pocket{display:flex;align-items:center;gap:7px;min-height:88px}
+.bgm-pocket-brand{display:none}
+.bgm-pocket-lcd{flex:1;min-width:0;height:76px;display:flex;flex-direction:column;justify-content:center;gap:4px;background:linear-gradient(135deg,#a2c6df,#d3e7f2 65%,#9ebcd2);border:4px solid #6e7a81;outline:1px solid #c3ccce;border-radius:5px;box-shadow:inset 2px 3px 6px #537c9877;color:#254866;padding:5px 6px;font-family:monospace}
+.bgm-pocket-status{font-size:9px;letter-spacing:.5px}
+.bgm-pocket-title{font-size:12px;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bgm-pocket-sub{font-size:8px;letter-spacing:.6px}
+.bgm-pocket-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;width:70px;flex:0 0 70px}
+.bgm-pocket-controls button{width:31px;height:31px;border:2px solid #6c7474;border-radius:50%;background:radial-gradient(circle at 35% 25%,#fff,#c2c9c8 58%,#87918f);color:#2e393a;box-shadow:1px 2px 2px #151b1d99;font-size:11px;cursor:pointer;padding:0}
+.bgm-pocket-controls button:active{transform:translateY(1px);box-shadow:none}
+.bgm-panel:not(.is-collapsed) .bgm-pocket{display:none}
+@media(max-width:650px){.bgm-panel.is-collapsed{width:226px}}
+
+/* V31: both states are the same physical MP3 shell, with identical width and corners */
+.bgm-panel,
+.bgm-panel.is-collapsed{
+  width:226px;
+  border:3px solid #6f7175;
+  border-radius:34px 39px 30px 32px;
+  background:linear-gradient(150deg,#e4e8e6 0%,#949c9d 16%,#363c40 23%,#30383a 78%,#a3acab 95%,#dce2e0 100%);
+  box-shadow:inset 0 2px 4px #fff9,inset 0 -4px 8px #12191a99,4px 8px 14px #271b2345;
+  color:#e9f3f4;
+  padding:7px 9px 9px;
+  overflow:hidden;
+}
+.bgm-panel:not(.is-collapsed){height:530px;max-height:min(530px,calc(100dvh - 24px))}
+.bgm-panel .bgm-top,
+.bgm-panel.is-collapsed .bgm-top{padding:0 5px 5px;border:0;background:transparent;min-height:24px}
+.bgm-panel .bgm-top strong{font-size:9px;color:#e1e6e6;letter-spacing:1.5px}
+.bgm-panel .bgm-top .bgm-btn{border:1px solid #abb2b0;border-radius:50%;background:linear-gradient(#f7f9f8,#8f9898);color:#30383a;font-size:13px;width:24px;height:24px;padding:0;line-height:1}
+.bgm-panel:not(.is-collapsed) .bgm-body{padding:4px 2px 3px;gap:0}
+.bgm-panel:not(.is-collapsed) .bgm-video-label{font-size:9px;color:#e1e6e6;margin:2px 4px 5px;letter-spacing:1px}
+.bgm-panel:not(.is-collapsed) .bgm-video{width:200px;min-width:200px;align-self:center;flex:0 0 200px;height:200px;min-height:200px;margin-bottom:9px;border:4px solid #6e7a81;border-radius:5px;outline:1px solid #c3ccce;background:#9fbfd6;box-shadow:inset 2px 3px 6px #537c9877}
+.bgm-panel:not(.is-collapsed) .bgm-mini-label{color:#a9c3d3;font-family:monospace;font-size:9px;margin:2px 5px}
+.bgm-panel:not(.is-collapsed) .bgm-title{color:#eaf6fc;font-family:monospace;font-size:12px;margin:3px 5px 1px}
+.bgm-panel:not(.is-collapsed) .bgm-source{color:#bbc9cc;font-size:10px;margin:0 5px 7px}
+.bgm-panel:not(.is-collapsed) .bgm-controls{gap:6px;margin:0 3px}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-btn{border:2px solid #6c7474;border-radius:22px;background:radial-gradient(circle at 35% 25%,#fff,#c2c9c8 58%,#87918f);color:#2e393a;box-shadow:1px 2px 2px #151b1d99;padding:6px 5px;font-size:11px}
+.bgm-panel:not(.is-collapsed) .bgm-volume{color:#e1e6e6;font-size:10px;margin:9px 4px}
+.bgm-panel:not(.is-collapsed) .bgm-volume input{accent-color:#a2c6df}
+.bgm-panel:not(.is-collapsed) .bgm-playlist{border:2px solid #6e7a81;border-radius:5px;background:linear-gradient(135deg,#a2c6df,#d3e7f2 65%,#9ebcd2);padding:3px;margin:1px 2px 0;color:#254866;scrollbar-color:#718ea2 #d3e7f2}
+.bgm-panel:not(.is-collapsed) .bgm-track{color:#254866;border-bottom:1px solid #87a8be;font-size:10px;padding:5px 3px}
+.bgm-panel:not(.is-collapsed) .bgm-track.is-current{background:#7fa6c4;color:#173f61}
+.bgm-panel:not(.is-collapsed) .bgm-track span:first-child{color:#426784}
+.bgm-panel:not(.is-collapsed) .bgm-note{color:#d8e4e7;font-size:9px;margin:5px 4px 0;min-height:18px;max-height:34px}
+@media(max-width:650px){.bgm-panel:not(.is-collapsed){max-height:min(530px,calc(100dvh - 20px))}}
+
+/* V32: short, one-row transport controls; top + is the only expand button */
+.bgm-panel.is-collapsed{height:105px;padding:6px 9px 7px}
+.bgm-panel.is-collapsed .bgm-top{min-height:22px;padding:0 5px 2px}
+.bgm-panel.is-collapsed .bgm-pocket{min-height:64px;gap:7px}
+.bgm-panel.is-collapsed .bgm-pocket-lcd{height:58px;gap:2px;padding:3px 5px}
+.bgm-panel.is-collapsed .bgm-pocket-status{font-size:8px}
+.bgm-panel.is-collapsed .bgm-pocket-title{font-size:11px}
+.bgm-panel.is-collapsed .bgm-pocket-sub{font-size:7px}
+.bgm-panel.is-collapsed .bgm-pocket-controls{display:flex;flex-direction:row;align-items:center;gap:3px;width:86px;flex:0 0 86px}
+.bgm-panel.is-collapsed .bgm-pocket-controls button{width:26px;height:26px;flex:0 0 26px;font-size:9px}

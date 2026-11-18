@@ -1,0 +1,35 @@
+/* Shared cursors. Keep this stylesheet LAST in the head, after all theme and layout CSS. */
+@media (pointer: fine) {
+  html, body, body * {
+    cursor: url("./cursor-strawberry-temp.png") 1 1, auto !important;
+  }
+  html body :is(a, button, summary, select, label[for], [role="button"], [role="link"], [onclick],
+    input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"],
+    input[type="radio"], .diary-keyring):not(:disabled),
+  html body :is(a, button, summary, select, label[for], [role="button"], [role="link"], [onclick],
+    input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"],
+    input[type="radio"], .diary-keyring):not(:disabled) * {
+    cursor: url("./cursor-ribbon-temp.png") 1 1, pointer !important;
+  }
+  html body #room3d-stage canvas { cursor: grab !important; }
+  html body #room3d-stage canvas:active { cursor: grabbing !important; }
+}
+
+/* Mint theme: ice cream for default, ribbon for interactive elements. */
+@media (pointer: fine) {
+  html[data-site-theme="mint"],
+  html[data-site-theme="mint"] body,
+  html[data-site-theme="mint"] body * {
+    cursor: url("./mint-cursor-icecream.png") 1 1, auto !important;
+  }
+  html[data-site-theme="mint"] body :is(a, button, summary, select, label[for], [role="button"], [role="link"], [onclick],
+    input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"],
+    input[type="radio"], .diary-keyring):not(:disabled),
+  html[data-site-theme="mint"] body :is(a, button, summary, select, label[for], [role="button"], [role="link"], [onclick],
+    input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"],
+    input[type="radio"], .diary-keyring):not(:disabled) * {
+    cursor: url("./mint-cursor-ribbon.png") 1 1, pointer !important;
+  }
+  html[data-site-theme="mint"] body #room3d-stage canvas { cursor: grab !important; }
+  html[data-site-theme="mint"] body #room3d-stage canvas:active { cursor: grabbing !important; }
+}

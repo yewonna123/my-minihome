@@ -1,0 +1,90 @@
+/* v52: navigation is a sibling of the page, so its root can sit BEHIND
+   the page while an active tab rises in front. No new overlay or borders. */
+@media(min-width:801px){
+ .wrapper > .main > .menu{right:-79px;width:91px;top:24px}
+}
+@media(min-width:651px) and (max-width:800px){
+ .wrapper > .main > .menu{right:-75px;width:87px;top:24px}
+}
+@media(min-width:651px){
+ .wrapper > .main{isolation:isolate}
+ .wrapper > .main > .content{position:relative;z-index:2}
+ .wrapper > .main > .menu{
+  position:absolute;display:flex;flex-direction:column;
+  gap:4px;z-index:auto;overflow:visible;
+ }
+ .wrapper > .main > .menu button{
+  box-sizing:border-box;width:100%;min-width:0;
+  height:33px;min-height:33px;margin:0;
+  padding:4px 3px 4px 12px;display:flex;
+  align-items:center;justify-content:center;
+  white-space:nowrap;overflow:visible;
+  font-size:11px;letter-spacing:-.45px;line-height:1;
+  border:2px solid #a17a6c;border-left:0;border-radius:0 9px 9px 0;
+  position:relative;z-index:1;background:#a96e90;color:#fffdf9;
+  transform:translateX(0);
+  transition:transform .18s ease,background-color .18s ease,color .18s ease;
+ }
+ .wrapper > .main > .menu button:not(.active):hover,
+ .wrapper > .main > .menu button:not(.active):focus-visible{
+  transform:translateX(-4px);background:#be86a5;
+ }
+ .wrapper > .main > .menu button.active,
+ .wrapper > .main > .menu button.active:hover,
+ .wrapper > .main > .menu button.active:focus-visible{
+  transform:none;z-index:3;background:#fffdf9;color:#4b3026;
+ }
+}
+/* Closed tab: right edge is the hinge on the actual cover edge.
+   Two genuine CSS faces: the pink front and pale inside. */
+.diary-cover-book .diary-cover-strap{
+ top:var(--diary-clasp-cover-top,490px);
+ right:-7px;width:86px;height:55px;
+ box-sizing:border-box;
+ border:0;border-radius:0;
+ background:transparent;box-shadow:none;
+ color:transparent;font-size:0;
+ transform-origin:100% 50%;
+ transform-style:preserve-3d;
+ backface-visibility:visible;
+}
+.diary-cover-book .diary-cover-strap::before,
+.diary-cover-book .diary-cover-strap::after{
+ content:"♡";position:absolute;inset:0;
+ display:grid;place-items:center;
+ font-size:26px;color:#fffaf3;
+ border:3px solid #8c536a;box-sizing:border-box;
+ border-radius:7px;
+ box-shadow:3px 4px 0 #58374455;
+ backface-visibility:hidden;
+ pointer-events:none;
+}
+.diary-cover-book .diary-cover-strap::before{
+ background:#b86f91;
+ transform:translateZ(1px);
+}
+.diary-cover-book .diary-cover-strap::after{
+ background:#d99fbe;
+ transform:rotateY(180deg) translateZ(1px);
+}
+.diary-cover-book .diary-cover-strap:hover::before{background:#a85e82}
+/* Open state: plain rectangular tab aligned with the right edge of
+   the original diary cover. Never rotate the completed tab. */
+.wrapper > .diary-close-btn{
+ top:var(--diary-clasp-open-top,490px);
+ right:-73px;width:74px;height:55px;
+ box-sizing:border-box;
+ border:3px solid #a87896;border-left:0;
+ border-radius:0 7px 7px 0;
+ background:#d99fbe;color:#fff8f9;
+ box-shadow:3px 4px 0 #58374455;
+ transform:none;transition:background-color .15s ease;
+ z-index:36;
+}
+.wrapper > .diary-close-btn:hover,.wrapper > .diary-close-btn:focus-visible{
+ background:#e4afca;filter:none;transform:none;
+}
+@media(max-width:650px){
+ .diary-cover-book .diary-cover-strap{width:62px;height:50px}
+ .wrapper > .diary-close-btn{right:-42px;width:43px;height:50px}
+}

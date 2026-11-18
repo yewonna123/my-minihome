@@ -1,0 +1,1286 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MY MINIHOME ♡</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* ========================================
+       1. BASIC
+    ======================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #62505e;
+      font-family: 'Gowun Dodum', sans-serif;
+      font-size: 16px;
+
+      background-color: #e9e3e8;
+      background-image: radial-gradient(
+        #d7cbd5 1px,
+        transparent 1px
+      );
+      background-size: 12px 12px;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    /* ========================================
+       2. MINIHOME FRAME
+    ======================================== */
+
+    .wrapper {
+      width: min(1000px, 94%);
+      margin: 35px auto;
+      padding: 12px;
+
+      background: #fff;
+      border: 1px solid #cbb9c9;
+      box-shadow: 0 5px 20px #8e778522;
+    }
+
+    /* ========================================
+       3. HEADER
+    ======================================== */
+
+    .top {
+      padding: 25px;
+      text-align: center;
+
+      background: #f7e9f2;
+      border: 1px solid #e5c9dc;
+    }
+
+    .top h1 {
+      margin: 5px;
+      color: #a66c96;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .top p {
+      margin: 7px;
+      color: #9c7893;
+    }
+
+    .counter {
+      color: #a987a1;
+      font-size: 14px;
+    }
+
+    /* ========================================
+       4. MAIN LAYOUT
+    ======================================== */
+
+    .main {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .sidebar,
+    .content {
+      padding: 15px;
+      background: #fffdfd;
+      border: 1px solid #e5d7e2;
+    }
+
+    .content {
+      min-width: 0;
+      min-height: 560px;
+    }
+
+    /* ========================================
+       5. LEFT PROFILE
+    ======================================== */
+
+    .profile {
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #dce5ec;
+    }
+
+    .profile-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 12px;
+      color: #6c8494;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* Profile Image */
+
+    .profile-photo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+
+      background: #edf2f5;
+      border: 1px solid #d4e0e8;
+      border-radius: 7px;
+    }
+
+    .profile-photo img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-photo-placeholder {
+      color: #9eb3c1;
+      font-size: 42px;
+    }
+
+    /* Name & Job */
+
+    .profile-info {
+      margin-top: 15px;
+    }
+
+    .profile-info h3 {
+      margin: 0;
+      color: #405c70;
+      font-size: 19px;
+    }
+
+    .profile-english-name {
+      margin: 3px 0 8px;
+      color: #8b9fac;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .profile-job {
+      margin: 0;
+      color: #54738a;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Introduction */
+
+    .profile-intro {
+      margin: 16px 0;
+      padding: 14px 0;
+
+      color: #536c7d;
+      font-size: 14px;
+      line-height: 1.9;
+
+      border-top: 1px dashed #dce5ec;
+      border-bottom: 1px dashed #dce5ec;
+    }
+
+    /* Contact Links */
+
+    .profile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      color: #617d8f;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .profile-link span {
+      width: 18px;
+      color: #8299a9;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .profile-link:hover {
+      color: #a66c96;
+      text-decoration: underline;
+    }
+
+    /* More About Me Button */
+
+    .profile-more {
+      width: 100%;
+      margin-top: 18px;
+      padding: 11px 5px;
+
+      background: #e9f0f4;
+      color: #52758c;
+      border: 1px solid #d8e4ec;
+      border-radius: 6px;
+
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+    }
+
+    .profile-more:hover {
+      background: #d7e6ef;
+    }
+
+    /* ========================================
+       6. NAVIGATION MENU
+    ======================================== */
+
+    .menu-title {
+      margin: 17px 0 8px;
+      color: #b27ca5;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .menu button {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px;
+      padding: 10px;
+
+      background: #fff;
+      color: #80677b;
+      border: 1px solid #eee3eb;
+
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .menu button:hover,
+    .menu button.active {
+      background: #f7e8f2;
+      color: #a45f90;
+      border-color: #e6c6dd;
+    }
+
+    /* ========================================
+       7. COMMON PAGE COMPONENTS
+    ======================================== */
+
+    .page-title {
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+
+      color: #a66c96;
+      font-size: 20px;
+      border-bottom: 1px dashed #ddc9d9;
+    }
+
+    .welcome {
+      margin-bottom: 18px;
+      padding: 25px;
+
+      background: #fbf2f8;
+      border: 1px solid #f0dce9;
+      text-align: center;
+    }
+
+    .welcome h2 {
+      color: #aa7098;
+    }
+
+    .notice {
+      margin: 12px 0;
+      padding: 15px;
+
+      background: white;
+      border: 1px solid #eee0eb;
+    }
+
+    .notice-title {
+      color: #a66c96;
+      font-weight: 400;
+    }
+
+    .small {
+      color: #a38d9e;
+      font-size: 14px;
+    }
+
+    /* ========================================
+       8. MINI ROOM
+    ======================================== */
+
+    .room {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+
+      min-height: 330px;
+      border: 5px solid #e8d8e7;
+
+      background: linear-gradient(
+        #d8c6e1 0 48%,
+        #b995a9 48% 51%,
+        #e6c7d3 51%
+      );
+    }
+
+    .furniture {
+      margin: 0 12px 25px;
+      font-size: 45px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .furniture span {
+      display: block;
+      font-size: 14px;
+    }
+
+    /* ========================================
+       9. MINI GAME
+    ======================================== */
+
+    .game-area {
+      padding: 30px 15px;
+      background: #faf0f7;
+      border: 1px solid #ebd5e5;
+      text-align: center;
+    }
+
+    .game-button {
+      padding: 12px 25px;
+      background: #d99fc4;
+      color: white;
+      border: 0;
+      cursor: pointer;
+    }
+
+    /* ========================================
+       10. DIARY & GUESTBOOK
+    ======================================== */
+
+    .diary {
+      padding: 15px;
+      border-bottom: 1px dashed #e3d3e0;
+    }
+
+    .guest-input {
+      width: 100%;
+      margin: 8px 0;
+      padding: 12px;
+      border: 1px solid #e5d5e2;
+    }
+
+    /* ========================================
+       11. FOOTER
+    ======================================== */
+
+    .footer {
+      padding: 20px;
+      color: #b99bb1;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* ========================================
+       12. RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 650px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .top h1 {
+        font-size: 24px;
+      }
+    }
+    /* 프로필 전체 그룹: 추가 여백 없음 */
+    .profile-text-group {
+      padding-left: 0;
+  }
+
+  /* 이름, 영문 이름, 직업: 오른쪽 5px */
+    .profile-text-group .profile-info {
+      padding-left: 5px;
+  }
+
+  /* 자기소개 글자만: 오른쪽 5px */
+    .profile-text-group .profile-intro > .profile-intro-text {
+      display: inline-block;
+      margin-left: 5px;
+  }
+
+  /* 이메일과 Behance: 오른쪽 2px */
+    .profile-text-group .profile-links {
+      padding-left: 1px;
+  }
+  </style>
+
+  <!-- Portfolio Styles + Right Index Layout -->
+  <link rel="stylesheet" href="portfolio.css?v=20261112-v35">
+  <link rel="stylesheet" href="arcade.css">
+  <link rel="stylesheet" href="bgm.css?v=20261112-v34">
+  <link rel="stylesheet" href="behind.css?v=20261112">
+  <link rel="stylesheet" href="guestbook.css?v=20261112">
+  <link rel="stylesheet" href="choco-pink-theme.css?v=20261112-v25">
+  <link rel="stylesheet" href="diary-layout.css?v=20261112-v34">
+  <link rel="stylesheet" href="bgm-device.css?v=20261112-restored">
+  <link rel="stylesheet" href="figma-mp3-frame2.css?v=20261113-anchor4">
+  <link rel="stylesheet" href="diary-peek.css?v=20261112-v47">
+  <link rel="stylesheet" href="diary-hardware.css?v=20261112-v57">
+  <link rel="stylesheet" href="figma-layout.css?v=7">
+  <link rel="stylesheet" href="cover-photo.css?v=20261113-cover3">
+
+  <link rel="stylesheet" href="theme-switcher.css?v=2">
+  <link rel="stylesheet" href="cursor.css?v=20261117-mint-cursor">
+  <script defer src="theme-switcher.js?v=2"></script>
+</head>
+
+<body>
+
+  <!-- ========================================
+       MINIHOME WRAPPER
+  ======================================== -->
+
+  <div class="wrapper">
+
+    <div class="counter figma-visitor-counter"><span class="counter-labels">TODAY <span>023</span>&nbsp; TOTAL <span>10248</span></span></div>
+
+    <!-- MAIN -->
+    <div class="main">
+    <!-- HEADER -->
+    <header class="top">
+      <h1>MY MINIHOME ♡</h1>
+      <p>나의 작은 공간에 오신 것을 환영합니다!</p>
+
+      <div class="small">
+        ♪ BGM : OVERDRIVE ♫
+      </div>
+    </header>
+
+
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+
+        <!-- PROFILE -->
+        <div class="profile">
+
+          <div class="profile-heading">
+            <span>MY PROFILE ♡</span>
+            <span>✧</span>
+          </div>
+
+          <!-- Profile Image -->
+          <div class="profile-photo">
+            <img
+              src="assets/images/profile.jpg"
+              alt="프로필 이미지"
+              onerror="this.style.display='none'"
+            >
+
+            <span class="profile-photo-placeholder">
+              ♡
+            </span>
+          </div>
+
+          <!-- 프로필 글자 영역: 아래 이름·소개·연락처의 왼쪽 여백을 한 번에 조절 -->
+          <div class="profile-text-group">
+          <!-- Name & Job -->
+          <div class="profile-info">
+            <h3>나예원</h3>
+
+            <p class="profile-english-name">
+              YEWON NA
+            </p>
+
+            <p class="profile-job">
+              2D &amp; 3D Motion Designer
+            </p>
+          </div>
+
+          <!-- Introduction -->
+          <p class="profile-intro">
+            <span class="profile-intro-text">2D와 3D를 넘나들며<br>
+            다양한 비주얼을 만들어갑니다.</span>
+          </p>
+
+          <!-- Contact -->
+          <div class="profile-links">
+
+            
+            <a
+                class="profile-link"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=n020123511@gmail.com"
+            >
+                <span>✉</span>
+                n020123511@gmail.com
+            </a>
+
+
+            <a
+              class="profile-link"
+              href="https://www.behance.net/141e2092"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>↗</span>
+              Behance
+            </a>
+
+          </div>
+
+          </div>
+
+          <!-- Profile Page Button -->
+          <button
+            class="profile-more"
+            type="button"
+            onclick="window.goMinihome('profile')"
+          >
+            MORE ABOUT ME +
+          </button>
+
+        </div>
+
+        <!-- ========================================
+             RIGHT INDEX MENU
+             Position is controlled by portfolio.css
+        ======================================== -->
+
+        <div class="menu-title">
+          ♥ MINIHOME MENU
+        </div>
+
+
+
+        <!-- TODAY'S MESSAGE -->
+        <div class="notice">
+          <div class="notice-title">
+            TODAY'S MESSAGE
+          </div>
+
+          <p class="small">
+            방문해 주셔서 감사합니다 ♥
+          </p>
+        </div>
+
+      </aside>
+
+        <nav class="menu" aria-label="미니홈피 메뉴">
+          <button data-page="home">⌂ HOME</button>
+          <button data-page="profile">♡ PROFILE</button>
+          <button data-page="room">▣ MINI ROOM</button>
+          <button data-page="portfolio">✿ PORTFOLIO</button>
+          <button data-page="game">♧ MINI GAME</button>
+          <button data-page="diary" title="BEHIND THE SITE">✎ BEHIND</button>
+          <button data-page="guestbook">✉ GUESTBOOK</button>
+        </nav>
+
+            <!-- MAIN CONTENT -->
+      <main class="content" id="content">
+        <!-- Pages are rendered by portfolio.js -->
+      </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      MY MINIHOME © 2026 · Made with Love ♡
+    </footer>
+
+  </div>
+
+  <!-- ========================================
+       PAGE CONTENT
+  ======================================== -->
+
+  <script>
+    window.MINIHOME_PAGES = {
+
+      // HOME
+      
+        home: `
+        <div class="home-page">
+            <div class="page-title">HOME ♡</div>
+
+
+            <!-- 최근 작품 -->
+            <section class="home-section">
+            <div class="home-section-heading">
+                <h3>✿ RECENT WORKS</h3>
+
+                <button
+                type="button"
+                class="home-view-all"
+                onclick="window.goMinihome('portfolio')"
+                >
+                VIEW ALL +
+                </button>
+            </div>
+
+            <div class="home-work-grid" id="home-work-grid"></div>
+            </section>
+
+            <!-- 업데이트 -->
+            <section class="home-section">
+            <div class="home-section-heading">
+                <h3>♡ MINIHOME UPDATE</h3>
+                <span class="home-date">2026.11.11</span>
+            </div>
+
+            <div class="home-update">
+                나만의 미니홈피를 제작하고 있습니다.
+            </div>
+            </section>
+        </div>
+        `,
+
+
+     
+    // PROFILE
+    profile: `
+      <div class="profile-page">
+
+        <div class="page-title">PROFILE ♡</div>
+
+        <!-- ABOUT ME -->
+        <section class="profile-about">
+
+          <div class="profile-eyebrow">
+            ✧ ABOUT ME ✧
+          </div>
+
+          <h2>NA YEWON</h2>
+
+          <p class="profile-job">
+            2D & 3D Motion Designer
+          </p>
+
+          <p class="profile-description">
+            2D 모션그래픽부터 3D 시네마틱까지,
+            다양한 제작 도구를 활용해 영상과
+            비주얼 콘텐츠를 제작합니다.
+            <br><br>
+            Cinema 4D와 After Effects를 중심으로
+            작업하며, Unreal Engine을 활용한
+            시네마틱 제작 경험도 갖추고 있습니다.
+          </p>
+
+        </section>
+
+        <!-- SKILLS & TOOLS -->
+        <section class="profile-section">
+
+          <div class="profile-section-heading">
+            <h3>✿ SKILLS & TOOLS</h3>
+            <span>01</span>
+          </div>
+
+          <div class="profile-tool-group">
+
+            <h4 class="profile-group-title">
+              MAIN TOOLS
+            </h4>
+
+            <div class="profile-tool-grid">
+
+              <div class="profile-tool-card">
+                <strong>Cinema 4D + Octane Render</strong>
+                <p>
+                  3D 모델링 · 애니메이션<br>
+                  라이팅 · 재질 · 렌더링
+                </p>
+              </div>
+
+              <div class="profile-tool-card">
+                <strong>After Effects</strong>
+                <p>
+                  2D 모션그래픽 · 합성<br>
+                  영상 이펙트 및 보정
+                </p>
+              </div>
+
+              <div class="profile-tool-card">
+                <strong>Photoshop</strong>
+                <p>
+                  그래픽 디자인<br>
+                  이미지 편집 및 보정
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="profile-tool-group">
+
+            <h4 class="profile-group-title">
+              ADDITIONAL TOOLS
+            </h4>
+
+            <div class="profile-tool-grid">
+
+              <div class="profile-tool-card profile-tool-secondary">
+                <strong>Unreal Engine</strong>
+                <p>
+                  시네마틱 · MetaHuman<br>
+                  실시간 3D
+                </p>
+              </div>
+
+              <div class="profile-tool-card profile-tool-secondary">
+                <strong>Premiere Pro</strong>
+                <p>
+                  영상 편집 · 자막<br>
+                  사운드 편집
+                </p>
+              </div>
+
+              <div class="profile-tool-card profile-tool-secondary">
+                <strong>Illustrator</strong>
+                <p>
+                  벡터 그래픽 제작
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="profile-section">
+
+          <div class="profile-section-heading">
+            <h3>♡ EDUCATION</h3>
+            <span>02</span>
+          </div>
+
+          <div class="profile-timeline">
+
+            <div class="profile-timeline-item">
+
+              <div class="profile-timeline-date">
+                2023 — 2027
+              </div>
+
+              <div class="profile-timeline-content">
+                <h4>덕성여자대학교</h4>
+                <p>
+                  컴퓨터공학전공<br>
+                  IT미디어공학전공 복수전공
+                </p>
+                <span>공학사 · 졸업예정</span>
+              </div>
+
+            </div>
+
+            <div class="profile-timeline-item">
+
+              <div class="profile-timeline-date">
+                2024
+              </div>
+
+              <div class="profile-timeline-content">
+                <h4>Angelo State University</h4>
+                <p>
+                  Exchange Student<br>
+                  Computer Science
+                </p>
+                <span>United States</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- TRAINING & CERTIFICATION -->
+        <section class="profile-section">
+
+          <div class="profile-section-heading">
+            <h3>✧ TRAINING & CERTIFICATION</h3>
+            <span>03</span>
+          </div>
+
+          <div class="profile-timeline">
+
+            <div class="profile-timeline-item">
+
+              <div class="profile-timeline-date">
+                2025 — 2026
+              </div>
+
+              <div class="profile-timeline-content">
+                <h4>3D 모션그래픽 교육</h4>
+                <p>
+                  Cinema 4D 중심의 3D 모션그래픽
+                  및 Adobe 프로그램 학습
+                </p>
+                <span>
+                  SBS 아카데미컴퓨터아트학원
+                </span>
+              </div>
+
+            </div>
+
+            <div class="profile-timeline-item">
+
+              <div class="profile-timeline-date">
+                2026
+              </div>
+
+              <div class="profile-timeline-content">
+                <h4>컴퓨터그래픽기능사</h4>
+                <p>한국산업인력공단</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- PROJECT EXPERIENCE -->
+        <section class="profile-section">
+
+          <div class="profile-section-heading">
+            <h3>✿ PROJECT EXPERIENCE</h3>
+            <span>04</span>
+          </div>
+
+          <div class="profile-experience-list">
+
+            <div class="profile-experience-card">
+
+              <span class="profile-experience-year">
+                2025
+              </span>
+
+              <h4>
+                장미원시장 미디어파사드 프로젝트
+              </h4>
+
+              <p>
+                지역 상권 활성화를 위한 학교·지역
+                협업 프로젝트에 참여했습니다.
+                Cinema 4D와 After Effects를 활용해
+                프로젝션 맵핑 영상을 제작했습니다.
+              </p>
+
+            </div>
+
+            <div class="profile-experience-card">
+
+              <span class="profile-experience-year">
+                2025
+              </span>
+
+              <h4>
+                덕성여자대학교 전공 홍보영상 제작
+              </h4>
+
+              <p>
+                신입생 대상 전공 홍보영상의
+                스토리보드 기획, 인터뷰 촬영 및
+                편집을 진행했습니다.
+                완성된 영상은 학교 홈페이지에
+                게시되었습니다.
+              </p>
+
+            </div>
+
+            <div class="profile-experience-card">
+
+              <span class="profile-experience-year">
+                2025
+              </span>
+
+              <h4>
+                Jelly Busters
+              </h4>
+
+              <p>
+                3인 팀으로 진행한 Unreal Engine 기반
+                게임 제작 프로젝트입니다.
+                UI/UX, 컷신, 캐릭터, 굿즈 등
+                디자인 전반을 담당했습니다.
+              </p>
+
+              <button
+                type="button"
+                class="profile-project-link"
+                onclick="window.goMinihome('portfolio')"
+              >
+                VIEW PORTFOLIO +
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <div class="profile-footer">
+          THANK YOU FOR VISITING MY PROFILE ♡
+        </div>
+
+      </div>
+    `,
+
+
+      // MINI ROOM
+      room: `
+        <div class="page-title">MINI ROOM ♡</div>
+        <p class="room3d-intro">마우스로 방을 돌려보세요. 가구를 클릭하면 작은 반응이 나타납니다 ♡</p>
+        <div class="room3d-toolbar"><button id="room3d-reset" type="button">↺ 처음 시점</button><span id="room3d-status" role="status">3D 공간을 준비하고 있습니다...</span></div>
+        <div id="room3d-stage" aria-label="마우스로 회전하고 클릭할 수 있는 3D 미니룸"></div>
+        <p class="room3d-help">드래그: 회전 · 휠: 확대/축소 · 가구 클릭: 상호작용</p>
+      `,
+
+      // MINI GAME
+      game: `
+        <div class="page-title">MINI GAME ♡</div>
+
+        <div class="game-area">
+          <h2>♡ FIND THE HEART ♡</h2>
+
+          <p id="game-result">
+            하트를 찾아보세요!
+          </p>
+
+          <button
+            class="game-button"
+            onclick="playHeartGame()"
+          >
+            하트 찾기!
+          </button>
+        </div>
+      `,
+
+      // BEHIND THE SITE — 제작 비하인드
+      diary: `
+        <div class="behind-page">
+          <div class="page-title">BEHIND THE SITE ♡</div>
+          <div class="behind-hero">
+            <span class="behind-eyebrow">✧ THE STORY OF MY MINIHOME ✧</span>
+            <h2>How I Made My Own Little Website</h2>
+            <p>아이디어부터 디자인, ChatGPT와 함께한 구현까지.<br>이 홈페이지가 만들어지는 과정을 소개합니다.</p>
+          </div>
+          <div class="behind-credit">
+            <div><span>INSPIRATION</span><strong>CYWORLD &amp; RETRO WEB</strong></div>
+            <div><span>MY ROLE</span><strong>기획 · 디자인 방향 · 에셋 제작 및 수정</strong></div>
+            <div><span>DEVELOPMENT</span><strong>ChatGPT 활용</strong></div>
+          </div>
+          <article class="behind-entry">
+            <span class="behind-number">01 / WHY I STARTED</span>
+            <h3>언젠가는 나만의 홈페이지를 만들고 싶었다.</h3>
+            <p>예전부터 직접 홈페이지를 만들어보고 싶다는 생각이 있었습니다. 하지만 코딩이 어렵게 느껴져 쉽게 시도하지 못했습니다.</p>
+            <p>그러다 ChatGPT를 활용하면 제가 구상한 홈페이지를 구현할 수 있겠다는 생각이 들었고, 오랫동안 생각만 해왔던 웹사이트 제작을 시작하게 되었습니다.</p>
+          </article>
+          <article class="behind-entry">
+            <span class="behind-number">02 / INSPIRED BY CYWORLD</span>
+            <h3>싸이월드에서 영감을 받은 레트로 미니홈피.</h3>
+            <p>저는 싸이월드 세대는 아니지만, 오래된 인터넷 문화와 레트로한 디자인 특유의 분위기를 좋아합니다.</p>
+            <p>특히 싸이월드의 아기자기한 레이아웃과 미니홈피라는 개인적인 공간의 개념이 매력적으로 느껴졌습니다.</p>
+            <p>이러한 요소에서 영감을 받아 싸이월드를 모티브로 한 포트폴리오 웹사이트를 기획했습니다.</p>
+          </article>
+          <article class="behind-entry">
+            <span class="behind-number">03 / MORE THAN A PORTFOLIO</span>
+            <h3>단순히 보는 것을 넘어, 직접 경험할 수 있는 공간.</h3>
+            <p>작업물을 나열하는 일반적인 포트폴리오보다는 방문자가 직접 클릭하고 움직이며 즐길 수 있는 웹사이트를 만들고 싶었습니다.</p>
+            <p>그래서 3D 미니룸, 미니게임, BGM 플레이어 등 다양한 인터랙티브 요소를 추가했습니다.</p>
+            <p>방문자가 단순히 작업물을 감상하는 데 그치지 않고, 홈페이지 곳곳을 탐색하며 즐길 수 있도록 구성하고자 했습니다.</p>
+          </article>
+          <article class="behind-entry">
+            <span class="behind-number">04 / MADE WITH CHATGPT</span>
+            <h3>AI를 활용한 웹사이트 제작.</h3>
+            <p>이 웹사이트의 코드는 ChatGPT를 활용해 작성했습니다.</p>
+            <p>원하는 디자인과 기능을 설명하고, 생성된 코드를 적용해 결과를 확인하며 수정하는 과정을 반복했습니다.</p>
+            <p>특히 미니게임의 난이도나 인터랙션의 움직임처럼 직접 사용해봐야 알 수 있는 부분은 여러 번 테스트하고 피드백하며 조정했습니다.</p>
+            <p>AI를 코드 구현을 위한 도구로 활용하면서, 제가 구상한 아이디어를 실제 웹사이트로 발전시켜 나갔습니다.</p>
+          </article>
+          <article class="behind-entry behind-entry-featured">
+            <span class="behind-number">05 / DESIGN &amp; CUSTOMIZATION</span>
+            <h3>나만의 디자인으로 완성해 가는 공간.</h3>
+            <p>이 홈페이지는 단순히 포트폴리오를 담는 공간이 아니라, 웹사이트 자체도 하나의 디자인 작업물로 보여주기 위해 제작하고 있습니다.</p>
+            <p>사이트에 필요한 디자인 에셋을 직접 제작하고, 3D 미니룸과 미니홈피의 시각적인 요소 역시 저만의 스타일로 수정해 나갈 계획입니다.</p>
+            <p>싸이월드의 레트로한 분위기를 모티브로 삼되, 단순히 과거의 디자인을 재현하는 것이 아니라 저의 취향과 작업 스타일을 담은 공간으로 발전시키고자 합니다.</p>
+          </article>
+          <article class="behind-entry">
+            <span class="behind-number">06 / WHAT I LEARNED</span>
+            <h3>아이디어를 실제로 구현하는 과정.</h3>
+            <p>코딩이 어렵다는 이유로 시도하지 못했던 홈페이지 제작을 ChatGPT의 도움으로 시작할 수 있었습니다.</p>
+            <p>제작 과정에서 원하는 결과를 얻기 위해서는 구체적인 방향을 설정하고, 결과를 직접 확인하며, 반복적으로 수정하는 과정이 중요하다는 것을 느꼈습니다.</p>
+            <p>앞으로도 디자인과 기능을 꾸준히 발전시키며 저만의 포트폴리오를 완성해 나가고 싶습니다.</p>
+          </article>
+          <div class="behind-end">INSPIRED BY CYWORLD · PLANNED &amp; DESIGNED BY ME<br>DEVELOPED WITH ChatGPT ♡</div>
+        </div>
+      `,
+
+      // GUESTBOOK — 브라우저 임시 저장 버전
+      guestbook: `
+        <section class="guestbook-page">
+          <div class="page-title">GUESTBOOK ♡</div>
+          <div class="guestbook-intro">
+            <span>✉ LITTLE NOTES</span>
+            <h2>방문 흔적을 남겨주세요 ♡</h2>
+            <p>익명으로 짧은 메시지를 남길 수 있어요.</p>
+          </div>
+          <form id="guestbook-form" class="guestbook-form">
+            <label for="guestbook-message">MESSAGE <span id="guestbook-count">0 / 200</span></label>
+            <textarea id="guestbook-message" maxlength="200" rows="4" placeholder="여기에 메시지를 남겨주세요 ♡" required></textarea>
+            <div class="guestbook-form-bottom">
+              <span>FROM. 익명의 방문자</span>
+              <button type="submit" class="guestbook-submit">글 남기기 ♡</button>
+            </div>
+          </form>
+          <div class="guestbook-heading"><strong>VISITOR NOTES</strong><span id="guestbook-total">0 notes</span></div>
+          <div id="guestbook-list" class="guestbook-list" aria-live="polite"></div>
+          <p class="guestbook-note">* 현재는 작성한 브라우저에만 저장되는 미리보기 기능입니다.</p>
+        </section>
+      `
+    };
+
+    /* ========================================
+       MINI GAME FUNCTION
+    ======================================== */
+
+
+/* ========================================
+   HOME - RECENT WORKS
+======================================== */
+
+        function renderHomeWorks() {
+        const container = document.getElementById('home-work-grid');
+        const projects = window.PORTFOLIO_PROJECTS;
+
+        if (!container || !Array.isArray(projects)) {
+            return;
+        }
+
+        container.replaceChildren();
+
+        projects.slice(0, 2).forEach((project) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'home-work-card';
+
+            const thumbnail = document.createElement('img');
+            thumbnail.src = project.thumbnail;
+            thumbnail.alt = project.title;
+            thumbnail.loading = 'lazy';
+
+            const title = document.createElement('strong');
+            title.textContent = project.title;
+
+            const category = document.createElement('span');
+            category.textContent = project.category || '';
+
+            button.append(thumbnail, title, category);
+
+            button.addEventListener('click', () => {
+                window.goMinihome('home', project.id);
+            });
+
+            container.appendChild(button);
+        });
+        }
+
+        /* HOME이 표시될 때 썸네일 생성 */
+        const homeObserver = new MutationObserver(() => {
+        const container = document.getElementById('home-work-grid');
+
+        if (container && container.children.length === 0) {
+            renderHomeWorks();
+        }
+        });
+
+        homeObserver.observe(document.getElementById('content'), {
+        childList: true
+        });
+
+    function playHeartGame() {
+      const result = document.getElementById('game-result');
+
+      if (!result) return;
+
+      result.textContent = Math.random() > 0.5
+        ? '하트를 찾았습니다! ♥'
+        : '다시 도전해 보세요 ♡';
+    }
+
+  </script>
+
+  <!-- ========================================
+       PORTFOLIO SCRIPTS
+       Keep this loading order
+  ======================================== -->
+
+  <script src="portfolio-data.js"></script>
+  <script src="portfolio.js"></script>
+  <script type="importmap">
+    {"imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+    }}
+  </script>
+  <script type="module" src="room3d.js?v=20261112-restored"></script>
+
+  <script src="asmr-room.js"></script>
+  <script src="arcade.js"></script>
+  <script src="guestbook.js?v=20261112"></script>
+  <script src="bgm.js?v=20261113-anchor4"></script>
+<script>
+/* Diary cover controls — standalone; does not alter routing or game state. */
+(() => {
+  function initDiaryCover() {
+    const wrapper = document.querySelector('.wrapper');
+    if (!wrapper || document.getElementById('diary-cover-screen')) return;
+    const close = document.createElement('button');
+    close.type='button'; close.className='diary-close-btn';
+    close.textContent='♡';
+    close.title='잠금장치를 닫아 다이어리 덮기';
+    close.setAttribute('aria-label','열린 잠금장치를 눌러 다이어리 닫기');
+    wrapper.appendChild(close);
+
+    const charm = document.createElement('button');
+    charm.type='button';
+    charm.setAttribute('aria-label','딸기 키링 흔들기');
+    charm.className='diary-keyring';
+    charm.addEventListener('click', () => {
+      charm.classList.remove('is-swinging');
+      void charm.offsetWidth;
+      charm.classList.add('is-swinging');
+    });
+    charm.addEventListener('animationend', () => charm.classList.remove('is-swinging'));
+    charm.innerHTML='<span class="chain"></span><span class="charm">🍓</span>';
+    wrapper.appendChild(charm);
+
+    const screen = document.createElement('div');
+    screen.className='diary-cover-screen';
+    screen.id='diary-cover-screen';
+    screen.innerHTML=`<div class="diary-cover-book">
+      <div class="diary-cover-leaf">
+        <div class="diary-cover-photo" aria-hidden="true"></div><button type="button" class="diary-cover-photo-edit" aria-label="표지 사진 변경" title="표지 사진 변경"></button><div class="diary-cover-label"><strong>MY MINIHOME ♡</strong><span>STRAWBERRY & CHOCO DIARY</span></div>
+      </div>
+      <button type="button" class="diary-cover-strap" aria-label="다이어리 잠금장치 풀고 열기" title="똑딱이를 눌러 열기">♡</button>
+      <p class="diary-cover-hint">똑딱이 잠금장치를 눌러 다이어리를 열어보세요 ♡</p>
+    </div>`;
+    document.body.appendChild(screen);
+    const coverCharm = charm.cloneNode(true);
+    coverCharm.addEventListener('click', () => {
+      coverCharm.classList.remove('is-swinging');
+      void coverCharm.offsetWidth;
+      coverCharm.classList.add('is-swinging');
+    });
+    coverCharm.addEventListener('animationend', () => coverCharm.classList.remove('is-swinging'));
+    screen.querySelector('.diary-cover-book').insertBefore(coverCharm, screen.querySelector('.diary-cover-leaf'));
+    const setFigmaScale = () => {
+      // Keep the established diary size and Figma center on wide screens.
+      // Below the fit threshold, use the real artwork edges (including the
+      // keyring and clasp) and align the visible LEFT edge with a small gutter.
+      const normalScale = 0.88;
+      const artworkLeft = 56;
+      const artworkRight = 1781;
+      const artworkWidth = artworkRight - artworkLeft;
+      const gutter = 6;
+      const viewportWidth = window.innerWidth;
+      const scale = Math.max(.18, Math.min(normalScale, (viewportWidth - gutter * 2) / artworkWidth));
+      const isShrinking = scale < normalScale;
+      // CSS positions the 1920px canvas about its center (960px).
+      // Offset ONLY during shrink: leftmost artwork pixel lands at the gutter.
+      const horizontalOffset = isShrinking
+        ? gutter - viewportWidth / 2 + (960 - artworkLeft) * scale
+        : 0;
+      document.documentElement.style.setProperty('--figma-scale', String(scale));
+      document.documentElement.style.setProperty('--figma-shrink-offset', `${horizontalOffset}px`);
+    };
+        setFigmaScale();
+    window.addEventListener('resize', setFigmaScale);
+    const updateCoverSize = () => {
+      const bounds = wrapper.getBoundingClientRect();
+      screen.style.setProperty('--closed-diary-width', `${Math.round(bounds.width / 2)}px`);
+      screen.style.setProperty('--closed-diary-height', `${Math.round(bounds.height)}px`);
+      // Anchor the clasp beneath the index, rather than to the variable page midpoint.
+      const menu = wrapper.querySelector('.menu');
+      const menuBounds = menu?.getBoundingClientRect();
+      const indexBottom = menuBounds ? menuBounds.bottom - bounds.top : 310;
+      const openTop = Math.max(110, Math.min(indexBottom + 22, bounds.height - 65));
+      const coverBook = screen.querySelector('.diary-cover-book');
+      const coverTop = Math.round((coverBook.offsetHeight - 55) / 2);
+      wrapper.style.setProperty('--diary-clasp-open-top', `${Math.round(openTop)}px`);
+      screen.style.setProperty('--diary-clasp-cover-top', `${Math.round(coverTop)}px`);
+    };
+    updateCoverSize();
+    window.addEventListener('resize', updateCoverSize);
+    const opener = screen.querySelector('.diary-cover-strap');
+    let transitionTimer = null;
+    let busy = false;
+    const duration = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 620;
+    const finishTransition = (opened) => {
+      busy = false;
+      screen.classList.remove('is-opening', 'is-closing');
+      screen.classList.toggle('is-open', opened);
+      screen.setAttribute('aria-hidden', opened ? 'true' : 'false');
+      if (opened) close.focus({preventScroll:true});
+      else opener.focus({preventScroll:true});
+    };
+    const openDiary = () => {
+      if (busy || screen.classList.contains('is-open')) return;
+      busy = true;
+      clearTimeout(transitionTimer);
+      updateCoverSize();
+      screen.classList.remove('is-closing');
+      screen.classList.add('is-opening');
+      transitionTimer = setTimeout(() => finishTransition(true), duration());
+    };
+    const closeDiary = () => {
+      if (busy || !screen.classList.contains('is-open')) return;
+      busy = true;
+      clearTimeout(transitionTimer);
+      updateCoverSize();
+      screen.classList.remove('is-open', 'is-opening');
+      screen.classList.add('is-closing');
+      transitionTimer = setTimeout(() => finishTransition(false), duration());
+    };
+    opener.addEventListener('click',openDiary);
+    close.addEventListener('click',closeDiary);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initDiaryCover);
+  else initDiaryCover();
+})();
+</script>
+<script src="cover-photo.js?v=20261113-cover3" defer></script>
+</body>
+</html>

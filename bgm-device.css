@@ -1,0 +1,112 @@
+
+/* V35 — matching silver / pale pink portable MP3 shells */
+.bgm-panel,.bgm-panel.is-collapsed{
+  --mp3-silver:#e5e6e9;--mp3-pink:#efcbdc;--mp3-ink:#665b68;
+  width:226px;box-sizing:border-box;
+  border:2px solid #b7aeb9;
+  border-radius:19px 21px 18px 20px;
+  background:linear-gradient(105deg,#fafafa 0%,#e9e9ed 22%,#f7f7f9 55%,#d4d3da 100%);
+  box-shadow:inset 2px 2px 3px #ffffff, inset -2px -2px 5px #b7b4bd99,3px 7px 15px #604e6340;
+  color:var(--mp3-ink);padding:7px 10px 9px;overflow:hidden;
+}
+.bgm-panel .bgm-top,.bgm-panel.is-collapsed .bgm-top{
+  background:transparent;border:0;
+  padding:0 3px 3px;min-height:23px;flex:0 0 auto;
+}
+.bgm-panel .bgm-top strong{color:#9d7890;font-size:9px;letter-spacing:1.2px}
+.bgm-panel .bgm-top .bgm-btn{
+  width:23px;height:23px;border-radius:50%;padding:0;
+  border:1px solid #d0acbf;color:#8e657e;font-size:14px;
+  background:linear-gradient(#fff8fc,#e7bed2);box-shadow:inset 0 1px 1px #fff,0 1px 2px #b7a7b3;
+}
+.bgm-panel.is-collapsed{height:105px;max-height:none}
+.bgm-panel.is-collapsed .bgm-pocket{display:flex;align-items:center;min-height:62px;gap:8px}
+.bgm-panel.is-collapsed .bgm-pocket-lcd{
+  height:58px;min-width:0;flex:1;
+  padding:3px 5px;gap:2px;border:4px solid #3c3a43;
+  outline:1px solid #d8bacb;border-radius:6px;
+  background:linear-gradient(125deg,#e7dfe6,#f8eff5 55%,#d9cbd7);
+  box-shadow:inset 1px 2px 4px #99879588;color:#71586c;
+}
+.bgm-panel.is-collapsed .bgm-pocket-status{font-size:8px}
+.bgm-panel.is-collapsed .bgm-pocket-title{font-size:11px;color:#695368;display:block;min-width:0;overflow:hidden;white-space:nowrap}
+.bgm-panel.is-collapsed .bgm-pocket-sub{font-size:7px}
+.bgm-panel.is-collapsed .bgm-pocket-controls{
+  display:flex;align-items:center;gap:2px;
+  width:85px;flex:0 0 85px;
+  border:2px solid #d3becb;border-radius:25px;
+  background:linear-gradient(#f9f9fa,#d5d4da);padding:4px 2px;
+  box-shadow:inset 1px 2px 4px #b4acb599;
+}
+.bgm-panel.is-collapsed .bgm-pocket-controls button{
+  flex:1 1 0;min-width:0;width:auto;height:24px;
+  padding:0;border:0;border-radius:50%;
+  background:transparent;color:#917589;font-size:9px;box-shadow:none;
+}
+.bgm-panel.is-collapsed .bgm-pocket-controls button[data-pocket-play]{
+  background:linear-gradient(#fff,#e9cbdc);border:1px solid #d9b6c9;
+}
+.bgm-panel:not(.is-collapsed){
+  height:480px;max-height:min(480px,calc(100dvh - 24px));
+}
+.bgm-panel:not(.is-collapsed) .bgm-pocket{display:none}
+.bgm-panel:not(.is-collapsed) .bgm-body{
+  display:flex;flex:1;min-height:0;flex-direction:column;
+  padding:3px 1px 4px;overflow:hidden;
+}
+.bgm-panel:not(.is-collapsed) .bgm-video-label{
+  color:#b28ba3;font-size:9px;letter-spacing:1px;margin:0 3px 4px;
+}
+.bgm-panel:not(.is-collapsed) .bgm-video{
+  width:196px;min-width:0;max-width:100%;
+  align-self:center;height:170px;min-height:170px;flex:0 0 170px;
+  border:7px solid #3c3a43;outline:1px solid #d9bccb;border-radius:7px;
+  background:#e7dfe6;box-shadow:0 2px 4px #9b8a9b66;margin-bottom:7px;
+}
+.bgm-panel:not(.is-collapsed) .bgm-video iframe{min-height:0;height:100%}
+.bgm-panel:not(.is-collapsed) .bgm-mini-label{color:#b18aa3;font-size:9px;margin:1px 5px}
+.bgm-panel:not(.is-collapsed) .bgm-title{color:#80657a;font-size:12px;margin:2px 5px;overflow:hidden;white-space:nowrap;min-width:0}
+.bgm-panel:not(.is-collapsed) .bgm-source{color:#a18b9b;font-size:10px;margin:0 5px 5px}
+.bgm-panel:not(.is-collapsed) .bgm-controls{
+  gap:0;margin:2px auto 4px;padding:5px;
+  width:166px;justify-content:center;
+  background:linear-gradient(145deg,#f9f9fa,#d8d7dd);
+  border:2px solid #d5c5d1;border-radius:40px;
+  box-shadow:inset 1px 2px 5px #a9a2ae77;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-btn{
+  flex:1 1 0;border:0;border-radius:22px;
+  background:transparent;box-shadow:none;color:#8f7388;
+  font-size:10px;padding:5px 2px;white-space:nowrap;
+}
+.bgm-panel:not(.is-collapsed) .bgm-controls .bgm-play{
+  background:linear-gradient(#fff,#eacbdb);border:1px solid #d8bacb;
+}
+.bgm-panel:not(.is-collapsed) .bgm-volume{color:#997c91;font-size:10px;margin:4px 5px 6px}
+.bgm-panel:not(.is-collapsed) .bgm-volume input{accent-color:#d9a7c2}
+.bgm-panel:not(.is-collapsed) .bgm-playlist{
+  flex:1 1 auto;min-height:30px;overflow-y:auto;
+  border:3px solid #3c3a43;border-radius:6px;outline:1px solid #dbc4d1;
+  background:linear-gradient(135deg,#f7eff5,#e8dce7);
+  box-shadow:inset 1px 2px 4px #99879555;
+  padding:2px;margin:0 3px;scrollbar-color:#d2a6bf #f7eff5;
+}
+.bgm-panel:not(.is-collapsed) .bgm-track{
+  color:#725d70;border-bottom:1px solid #d9c6d4;
+  font-size:10px;padding:4px;
+}
+.bgm-panel:not(.is-collapsed) .bgm-track.is-current{background:#eac7da;color:#694d64}
+.bgm-panel:not(.is-collapsed) .bgm-track span:first-child{color:#a17d96}
+.bgm-panel:not(.is-collapsed) .bgm-note{color:#9b8195;font-size:9px;margin:4px 4px 0;min-height:16px;max-height:30px}
+@media(max-width:650px){
+ .bgm-panel:not(.is-collapsed){max-height:min(530px,calc(100dvh - 20px))}
+}
+
+/* 긴 제목만 왼쪽으로 무한 순환하며, 두 복제 문구의 경계에서 끊기지 않는다. */
+.bgm-title,.bgm-pocket-title{overflow:hidden;text-overflow:clip}
+.bgm-scroll-text{display:inline-flex;gap:28px;white-space:nowrap;max-width:none;vertical-align:top;width:max-content;will-change:transform}
+.bgm-loop-copy{display:block;flex:none;white-space:nowrap}
+.is-scrolling > .bgm-scroll-text{animation:bgm-title-loop-left var(--bgm-scroll-duration,9s) linear infinite}
+.is-scrolling:hover > .bgm-scroll-text{animation-play-state:paused}
+@keyframes bgm-title-loop-left{from{transform:translateX(0)}to{transform:translateX(calc(-1 * var(--bgm-loop-width,0px)))}}
+@media(prefers-reduced-motion:reduce){.is-scrolling > .bgm-scroll-text{animation:none;transform:none}}

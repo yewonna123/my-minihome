@@ -1,0 +1,19 @@
+/* BEHIND THE SITE — scoped to avoid changing other pages */
+.behind-page{color:#705d6b;line-height:1.85}
+.behind-hero{text-align:center;padding:30px 18px;margin-bottom:17px;border:1px solid #ead5e3;background:linear-gradient(135deg,#fff5fb,#f6edf8)}
+.behind-eyebrow{display:block;color:#b58aa8;font-size:11px;letter-spacing:2px}
+.behind-hero h2{color:#a46d96;font-size:22px;line-height:1.4;margin:10px 0}
+.behind-hero p{font-size:13px;color:#937d8d;margin:0}
+.behind-credit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:15px 0 22px}
+.behind-credit>div{border:1px solid #eadce6;background:#fffafd;padding:12px 10px;min-width:0}
+.behind-credit span{display:block;font-size:10px;color:#b98fac;letter-spacing:1px;margin-bottom:5px}
+.behind-credit strong{font-size:12px;color:#80637a;font-weight:500;overflow-wrap:anywhere}
+.behind-entry{border:1px solid #ebdce7;background:#fffdfd;margin:0 0 13px;padding:21px 22px;position:relative}
+.behind-entry:before{content:'♡';position:absolute;top:15px;right:18px;color:#dfc2d5}
+.behind-number{font-size:11px;color:#b17da3;letter-spacing:1.2px}
+.behind-entry h3{font-size:17px;line-height:1.55;color:#936b89;margin:10px 0 15px}
+.behind-entry p{font-size:14px;line-height:1.95;margin:0 0 11px;word-break:keep-all}
+.behind-entry p:last-child{margin-bottom:0}
+.behind-entry-featured{background:#fdf4fa;border-color:#e5c6da}
+.behind-end{text-align:center;font-size:11px;line-height:2;color:#aa87a0;letter-spacing:1px;padding:19px 6px}
+@media(max-width:650px){.behind-credit{grid-template-columns:1fr}.behind-entry{padding:17px 15px}.behind-hero h2{font-size:19px}}

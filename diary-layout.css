@@ -1,0 +1,19 @@
+/* V34 — shared diary layout contract (loaded after theme) */
+/* The paper pages share the same grid row and padding. Tall pages grow naturally. */
+.wrapper > .main > .sidebar,
+.wrapper > .main > .content {box-sizing:border-box; min-width:0; padding:12px;}
+@media (min-width:651px) {
+  .wrapper > .main {display:grid;align-items:stretch;grid-auto-rows:auto;}
+  .wrapper > .main > .sidebar,
+  .wrapper > .main > .content {height:auto;min-height:0;max-height:none;align-self:stretch;}
+}
+/* Compact home; do not impose a minimum height or hide overflow on content pages. */
+.home-page {padding:0;}
+.home-page > .page-title {margin-bottom:10px;}
+.home-page > .home-section {margin-block:12px;}
+/* Long links and text must wrap rather than stretch the diary. */
+.wrapper > .main > .content {overflow-wrap:anywhere;}
+@media(max-width:650px){
+ .wrapper > .main > .sidebar,
+ .wrapper > .main > .content {padding:10px;}
+}
